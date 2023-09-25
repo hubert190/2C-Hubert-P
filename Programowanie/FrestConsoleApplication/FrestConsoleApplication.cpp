@@ -12,9 +12,8 @@ int main()
     std::cout << '\n';
     std::cout << -2.3; //sta³a rzeczywista
     std::cout << '\n';
-   
+  
 }
-
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu
 // Debug program: F5 or Debug > Start
     //   1. Use the Solution Explorer window to add/manage files Debugging menu

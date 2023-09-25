@@ -5,6 +5,8 @@ VisualStudioVersion = 17.7.34024.191
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "FrestConsoleApplication", "FrestConsoleApplication\FrestConsoleApplication.vcxproj", "{112F0E4F-0AB9-45F7-BEA0-E0FB9762B45E}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "VariableConsoleApplication", "VariableConsoleApplication\VariableConsoleApplication.vcxproj", "{DC1CA54E-9138-4BDE-BDEC-010EB18DF65D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -21,6 +23,14 @@ Global
 		{112F0E4F-0AB9-45F7-BEA0-E0FB9762B45E}.Release|x64.Build.0 = Release|x64
 		{112F0E4F-0AB9-45F7-BEA0-E0FB9762B45E}.Release|x86.ActiveCfg = Release|Win32
 		{112F0E4F-0AB9-45F7-BEA0-E0FB9762B45E}.Release|x86.Build.0 = Release|Win32
+		{DC1CA54E-9138-4BDE-BDEC-010EB18DF65D}.Debug|x64.ActiveCfg = Debug|x64
+		{DC1CA54E-9138-4BDE-BDEC-010EB18DF65D}.Debug|x64.Build.0 = Debug|x64
+		{DC1CA54E-9138-4BDE-BDEC-010EB18DF65D}.Debug|x86.ActiveCfg = Debug|Win32
+		{DC1CA54E-9138-4BDE-BDEC-010EB18DF65D}.Debug|x86.Build.0 = Debug|Win32
+		{DC1CA54E-9138-4BDE-BDEC-010EB18DF65D}.Release|x64.ActiveCfg = Release|x64
+		{DC1CA54E-9138-4BDE-BDEC-010EB18DF65D}.Release|x64.Build.0 = Release|x64
+		{DC1CA54E-9138-4BDE-BDEC-010EB18DF65D}.Release|x86.ActiveCfg = Release|Win32
+		{DC1CA54E-9138-4BDE-BDEC-010EB18DF65D}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
