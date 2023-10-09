@@ -56,30 +56,95 @@ void task4()
 void task5()
 {
 	int ray;
-		std::cout << "Podaj d³ugoœæ promienia";
-		std::cin >> ray;
-		int area;
-		area = 3.1415 * (ray * ray);
-		std::cout << "Pole d³ugoœci wynosi : " << area << "\n";
+	std::cout << "Podaj d³ugoœæ promienia";
+	std::cin >> ray;
+	int area;
+	area = 3.1415 * (ray * ray);
+	std::cout << "Pole d³ugoœci wynosi : " << area << "\n";
 
 
 
 }
 
 //Program obliczaj¹cy wartoœæ wyra¿enia a^2 + b^2
+void task6()
+{
+	int a, b;
+	std::cout << "Podaj wartoœæ a ";
+	std::cin >> a;
+	std::cout << "Podaj wartoœæ b ";
+	std::cin >> b;
+	int score;
+	score = (a * a) + (b * b);
+	std::cout << "Wyra¿enie a^2 + b^2 wynosi: " << score << "\n";
 
+
+
+
+
+}
+
+//Program obliczaj¹cy pole trójk¹ta o podstawie b i wysokoœci h
+void task7()
+{
+	int base_side, height;
+	std::cout << "Podaj podstawe trójk¹ta ";
+	std::cin >> base_side;
+	std::cout << "Podaj wysokoœæ trójk¹ta ";
+	std::cin >> height;
+	int area;
+	area = (height * base_side) / 2;
+	std::cout << "Pole trójk¹ta wynosi: " << area << "\n";
+}
+
+//Program obliczaj¹cy objêtoœæ kuli o promieniu r
+void task8()
+{
+	int ray;
+	std::cout << "Podaj promieñ ";
+	std::cin >> ray;
+	int volume;
+	volume = 3 / 4 * 3.14 * (ray * ray * ray);
+	std::cout << "Objêtoœæ kuli wynosi: " << volume << "\n";
+}
+//Program obliczaj¹cy pole trapezu o podstawach a i b oraz wysokoœci h
+void task9()
+{
+	int a, b, h;
+	std::cout << "Podaj d³ugoœæ podstawy a ";
+	std::cin >> a;
+	std::cout << "Podaj d³ugoœæ podstawy b ";
+	std::cin >> b;
+	std::cout << "Podaj d³ugoœæ wysokoœci h ";
+	std::cin >> h;
+	int area;
+	area = (a + b) * h / 2;
+	std::cout << "Pole trapezu wynosi: " << area << "\n";
+
+}
+
+//Program obliczaj¹cy œredni¹ wa¿on¹ trzech liczb z podanymi odpowiednimi wagami w1, w2 i w3.
+void task10()
+{
+	int mark1, mark2, mark3, weight1, weight2, weight3;
+	std::cout << "Podaj 1 ocene ";
+	std::cin >> mark1;
+	std::cout << "Podaj wagê 1 oceny ";
+	std::cin >> mark2;
+
+
+}
 
 
 
 int main()
 {
 	setlocale(LC_CTYPE, "polish");
-     //task1()
-	//task2()
-	//task3()
-	//task4()
-	//task5()
-	task6()
+	//task6();	
+	//task7();
+	//task8();
+	//task9();
+	task10();
 }
 
 
