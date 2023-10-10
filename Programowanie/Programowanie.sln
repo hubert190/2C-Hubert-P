@@ -7,6 +7,12 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "FrestConsoleApplication", "
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "VariableConsoleApplication", "VariableConsoleApplication\VariableConsoleApplication.vcxproj", "{DC1CA54E-9138-4BDE-BDEC-010EB18DF65D}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "01.Podstawy", "01.Podstawy", "{05CDD238-989E-4867-961F-3304432D1391}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "02.Instrukcje decyzyjne", "02.Instrukcje decyzyjne", "{0869C024-F219-489F-BBBD-5B0189A3D09E}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "InstructionIfConsoleApplication", "InstructionIfConsoleApplication\InstructionIfConsoleApplication.vcxproj", "{4D2A79C5-94C4-4FF1-9709-69608CC70E06}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -31,9 +37,22 @@ Global
 		{DC1CA54E-9138-4BDE-BDEC-010EB18DF65D}.Release|x64.Build.0 = Release|x64
 		{DC1CA54E-9138-4BDE-BDEC-010EB18DF65D}.Release|x86.ActiveCfg = Release|Win32
 		{DC1CA54E-9138-4BDE-BDEC-010EB18DF65D}.Release|x86.Build.0 = Release|Win32
+		{4D2A79C5-94C4-4FF1-9709-69608CC70E06}.Debug|x64.ActiveCfg = Debug|x64
+		{4D2A79C5-94C4-4FF1-9709-69608CC70E06}.Debug|x64.Build.0 = Debug|x64
+		{4D2A79C5-94C4-4FF1-9709-69608CC70E06}.Debug|x86.ActiveCfg = Debug|Win32
+		{4D2A79C5-94C4-4FF1-9709-69608CC70E06}.Debug|x86.Build.0 = Debug|Win32
+		{4D2A79C5-94C4-4FF1-9709-69608CC70E06}.Release|x64.ActiveCfg = Release|x64
+		{4D2A79C5-94C4-4FF1-9709-69608CC70E06}.Release|x64.Build.0 = Release|x64
+		{4D2A79C5-94C4-4FF1-9709-69608CC70E06}.Release|x86.ActiveCfg = Release|Win32
+		{4D2A79C5-94C4-4FF1-9709-69608CC70E06}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{112F0E4F-0AB9-45F7-BEA0-E0FB9762B45E} = {05CDD238-989E-4867-961F-3304432D1391}
+		{DC1CA54E-9138-4BDE-BDEC-010EB18DF65D} = {05CDD238-989E-4867-961F-3304432D1391}
+		{4D2A79C5-94C4-4FF1-9709-69608CC70E06} = {0869C024-F219-489F-BBBD-5B0189A3D09E}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {BFFC169A-C1FA-42E0-95B0-A293D1F95573}

@@ -27,6 +27,7 @@ void task2()
 	std::cout << "Srednia to: " << average << "\n";
 
 }
+
 //Program do obliczania pola prostok¹ta
 void task3()
 {
@@ -39,6 +40,7 @@ void task3()
 	area = sideA * sideB;
 	std::cout << "Pole wynosi : " << area << "\n ";
 }
+
 //Program obliczaj¹cy objêtoœæ sto¿ka
 void task4()
 {
@@ -107,6 +109,7 @@ void task8()
 	volume = 3 / 4 * 3.14 * (ray * ray * ray);
 	std::cout << "Objêtoœæ kuli wynosi: " << volume << "\n";
 }
+
 //Program obliczaj¹cy pole trapezu o podstawach a i b oraz wysokoœci h
 void task9()
 {
@@ -130,25 +133,68 @@ void task10()
 	std::cout << "Podaj 1 ocene ";
 	std::cin >> mark1;
 	std::cout << "Podaj wagê 1 oceny ";
+	std::cin >> weight1;
+	std::cout << "Podaj 2 ocene ";
 	std::cin >> mark2;
-
+	std::cout << "Podaj wagê 2 oceny ";
+	std::cin >> weight2;
+	std::cout << "Podaj 3 ocene ";
+	std::cin >> mark3;
+	std::cout << "Podaj wagê 3 oceny ";
+	std::cin >> weight3;
+	int mean;
+	mean = ((mark1 * weight1) + (mark2 * weight2) + (mark3 * weight3)) / (weight1 + weight2 + weight3);
+	std::cout << "Œrednia ocen wynosi: " << mean << "\n";
 
 }
 
+//Stwórz program, który pobiera od u¿ytkownika d³ugoœæ w metrach i przelicza j¹ na centymetry i milimetry, wyœwietlaj¹c wynik
+void task11()
+{
+	int meters;
+	std::cout << "Podaj d³ugoœæ w metrach ";
+	std::cin >> meters;
+	int centimeter;
+	centimeter = meters * 100;
+	std::cout << "Metry w przeliczeniu na centymetry: " << centimeter << "\n";
+	int  milimeter;
+	milimeter = centimeter * 10;
+	std::cout << "Metry w przeliczeniu na milimetry wynosi: " << milimeter << "\n";
+}
 
+//Napisz program, który konwertuje wprowadzon¹ kwotê w jednej walucie na inn¹, korzystaj¹c z okreœlonego kursu wymiany.
+void task12()
+{
+	int priceZl, convert;
+	std::cout << "Podaj kwotê w z³otówkach: ";
+	std::cin >> priceZl;
+	std::cout << "Podaj przelicznik: ";
+	std::cin >> convert;
+	int result;
+	result = priceZl * convert;
+	std::cout << "Przelicznik ze z³otówek na inn¹ walute wynosi: " << result << "\n"; 
 
-int main()
+}
+
+	int main()
 {
 	setlocale(LC_CTYPE, "polish");
+	//task1();
+	//task2();
+	//task3();
+	//task4();
+	//task5();
 	//task6();	
 	//task7();
 	//task8();
 	//task9();
-	task10();
+	//task10();
+	//task11();
+	//task12();
 }
 
 
-//algorytm- skoñczony zbiór instrukcji/zadañ który rozwi¹zuje zadany problem
+	//algorytm- skoñczony zbiór instrukcji/zadañ który rozwi¹zuje zadany problem
 /*
 Zapis algorytmów
 -rysunki
