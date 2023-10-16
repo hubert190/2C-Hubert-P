@@ -46,7 +46,7 @@ void task2()
 		std::cout << "Liczba jest nieparzysta \n";
 
 
-}	
+}
 
 
 int main()
@@ -54,4 +54,4 @@ int main()
 	//task1();
 	task2();
 
-}											
+}
