@@ -190,7 +190,7 @@ int main()
 {
 	setlocale(LC_CTYPE, "polish");
 	//task1();
-	//task2();
+	//task2();g
 	//task3();
 	//task4();
 	//task5();
