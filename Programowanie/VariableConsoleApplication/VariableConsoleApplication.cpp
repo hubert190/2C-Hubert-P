@@ -177,20 +177,7 @@ void task12()
 }
 
 //Napisz program, który wyœwietli informacje o tym czy liczba jest parzysta czy nieparzysta
-void task13()
 
-{
-	int number;
-	std::cout << "Podaj liczbe \n";
-	std::cin >> number;
-
-	if (number % 2 == 0)
-		std::cout << "Liczba jest parzysta \n";
-	else
-		std::cout << "Liczba jest nieparzysta \n";
-
-
-}
 
 
 
@@ -218,7 +205,7 @@ void task13()
 	//task10();
 	//task11();
 	//task12();
-	void task13();
+	
 }
 
 
