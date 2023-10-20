@@ -11,8 +11,8 @@ Operatory warunkowe:
 
 Operatory logiczne:
 && - and
-! - not 
-|| - or 
+! - not
+|| - or
 
 
 a	b		a&&b		a||b		!a
@@ -92,7 +92,7 @@ void task3()
 
 
 
-	
+
 	if (number >= 1 && number < 10)  //wersja 3
 		std::cout << "Liczba jest w przedziale\n";
 	else
@@ -101,7 +101,7 @@ void task3()
 
 	if (number < 1 || number >= 10)  //wersja 4
 		std::cout << "Liczba z poza zakresu\n";
-	else 
+	else
 		std::cout << "Liczba jest w przedziale\n";
 
 
@@ -132,9 +132,6 @@ void task4()
 }
 
 /*
-* .Napisz program, który poprosi u¿ytkownika o podanie liczby od 1 do 7 i wyœwietli odpowiadaj¹cy mu dzieñ tygodnia.
-* .Napisz program, który poprosi u¿ytkownika o podanie dwóch liczb ca³kowitych i wyœwietli wiêksz¹ z nich.
-* .Napisz program, który poprosi u¿ytkownika o podanie roku i sprawdzi, czy jest to rok przestêpny.Wyœwietl odpowiedni komunikat.
 * .Napisz program, który poprosi u¿ytkownika o podanie liczby ca³kowitej i sprawdzi, czy jest ona podzielna zarówno przez 3, jak i przez 5. Wyœwietl odpowiedni komunikat.
 * .Napisz program, który poprosi u¿ytkownika o podanie masy cia³a(w kilogramach) i wzrostu(w metrach).
 Na podstawie tych danych oblicz wskaŸnik BMI(Body Mass Index) i wyœwietl odpowiedni komunikat informuj¹cy o stanie zdrowia.
@@ -180,20 +177,81 @@ void task7()
 	std::cout << "Podaj liczbe ca³kowit¹ \n";
 	std::cin >> number;
 	if (number < 0)
-		(number* -1);
-	std::cout << "Wartoœæ bezwzglêdna: " << number << "/n";
+		std::cout << "Wartoœæ bezwzglêdna: " << number * -1 << " /n";
+	else
+		std::cout << "Wartoœæ bezwzglêdna:  " << number << " /n";
+}
+
+
+//Napisz program, który poprosi u¿ytkownika o podanie liczby od 1 do 7 i wyœwietli odpowiadaj¹cy mu dzieñ tygodnia.
+void task8()
+{
+	int numberOfDay;
+	std::cout << "Podaj liczbe od 1 do 7 \n";
+	std::cin >> numberOfDay;
+	if (numberOfDay == 1)
+		std::cout << "Dzieñ tygodnia to poniedzia³ek \n";
+	if (numberOfDay == 2)
+		std::cout << "Dzieñ tygodnia to wtorek \n";
+	if (numberOfDay == 3)
+		std::cout << "Dzieñ tygodnia to œroda \n";
+	if (numberOfDay == 4)
+		std::cout << "Dzieñ tygodnia to czwartek \n";
+	if (numberOfDay == 5)
+		std::cout << "Dzieñ tygodnia to pi¹tek \n";
+	if (numberOfDay == 6)
+		std::cout << "Dzieñ tygodnia to sobota \n";
+	if (numberOfDay == 7)
+		std::cout << "Dzieñ tygodnia to niedziela \n";
+}
+
+
+//Napisz program, który poprosi u¿ytkownika o podanie dwóch liczb ca³kowitych i wyœwietli wiêksz¹ z nich.
+void task9()
+{
+	int number1, number2;
+	std::cout << "Podaj 1 liczbe ca³kowit¹ \n";
+	std::cin >> number1;
+	std::cout << "Podaj 2 liczbe ca³kowit¹ \n";
+	std::cin >> number2;
+	if (number1 > number2)
+		std::cout << "Lczba 1 jest wiêksza od liczby 2 \n";
 	else 
-	std::cout << "Wartoœæ bezwzglêdna: " << number << "/n";
-	}
+		std::cout << "Lczba 2 jest wiêksza od liczby 1\n";
+
+}
+
+//Napisz program, który poprosi u¿ytkownika o podanie roku i sprawdzi, czy jest to rok przestêpny.Wyœwietl odpowiedni komunikat.
+void task10()
+{
+	int year;
+	std::cout << "Podaj rok \n";
+	std::cin >> year;
+
+	if (year > 0 && year % 4 ==0  && year % 100 !=0 || year % 400==0 )
+		std::cout << "Rok jest przestêpny";
+	else
+		std::cout << "Rok nie jest przestêpny";
+		
+
+
+}
+
+
+
+
 
 int main()
 {
 	setlocale(LC_CTYPE, "polish");
 	//task1();
-	//task2();g
+	//task2();
 	//task3();
 	//task4();
 	//task5();
 	//task6();
-	task7();
+	//task7();
+	//task8();
+	//task9();
+	task10();
 }
