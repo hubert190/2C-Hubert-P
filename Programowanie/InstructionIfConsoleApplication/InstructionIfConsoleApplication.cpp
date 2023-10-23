@@ -1,13 +1,13 @@
-#include <iostream>
+ï»¿#include <iostream>
 
 /*
 Operatory warunkowe:
->-wiêksze
-<-mniejszoœæ
->=-wiêksze b¹dŸ równe
-<=-mniejsze b¹dŸ równe
-==-równe
-!=-ró¿ne
+>-wiÄ™ksze
+<-mniejszoÅ›Ä‡
+>=-wiÄ™ksze bÄ…dÅº rÃ³wne
+<=-mniejsze bÄ…dÅº rÃ³wne
+==-rÃ³wne
+!=-rÃ³Å¼ne
 
 Operatory logiczne:
 && - and
@@ -22,7 +22,7 @@ T	F        F			  T			F
 T	T		 T			  T			F
 */
 
-//Napisz program, który wyœwietli informacje, czy liczba jest dodatnia czy nie.
+//Napisz program, ktÃ³ry wyÅ›wietli informacje, czy liczba jest dodatnia czy nie.
 void task1()
 {
 	int number;
@@ -36,7 +36,7 @@ void task1()
 		std::cout << "Liczba jest ujemna\n ";
 
 	if (number == 0)
-		std::cout << "Liczba równa sie 0\n";
+		std::cout << "Liczba rÃ³wna sie 0\n";
 
 
 
@@ -45,7 +45,7 @@ void task1()
 }
 
 
-//Napisz program, który wyœwietli informacje o tym czy liczba jest parzysta czy nieparzysta
+//Napisz program, ktÃ³ry wyÅ›wietli informacje o tym czy liczba jest parzysta czy nieparzysta
 void task2()
 
 {
@@ -63,7 +63,7 @@ void task2()
 
 }
 
-//Napisz program , który wyœwietli czy liczba jest z zakresu <1,10)
+//Napisz program , ktÃ³ry wyÅ›wietli czy liczba jest z zakresu <1,10)
 void task3()
 {
 	int number;
@@ -132,113 +132,179 @@ void task4()
 }
 
 /*
-* .Napisz program, który poprosi u¿ytkownika o podanie liczby ca³kowitej i sprawdzi, czy jest ona podzielna zarówno przez 3, jak i przez 5. Wyœwietl odpowiedni komunikat.
-* .Napisz program, który poprosi u¿ytkownika o podanie masy cia³a(w kilogramach) i wzrostu(w metrach).
-Na podstawie tych danych oblicz wskaŸnik BMI(Body Mass Index) i wyœwietl odpowiedni komunikat informuj¹cy o stanie zdrowia.
-* .Napisz program, który poprosi u¿ytkownika o podanie d³ugoœci trzech odcinków i sprawdzi, czy mo¿na zbudowaæ z nich trójk¹t.Wyœwietl odpowiedni komunikat.
-* .Napisz program, który poprosi u¿ytkownika o podanie liczby dodatniej i obliczy jej pierwiastek kwadratowy, jeœli jest to mo¿liwe.Wyœwietl wynik lub odpowiedni komunikat, jeœli liczba jest ujemna.
-* .Program sprawdzaj¹cy czy podana data jest poprawna(np.sprawdzaj¹c, czy dzieñ jest z zakresu od 1 do 31, miesi¹c od 1 do 12 itd.)
+Na podstawie tych danych oblicz wskaÅºnik BMI(Body Mass Index) i wyÅ›wietl odpowiedni komunikat informujÄ…cy o stanie zdrowia.
+* .Napisz program, ktÃ³ry poprosi uÅ¼ytkownika o podanie dÅ‚ugoÅ›ci trzech odcinkÃ³w i sprawdzi, czy moÅ¼na zbudowaÄ‡ z nich trÃ³jkÄ…t.WyÅ›wietl odpowiedni komunikat.
+* .Napisz program, ktÃ³ry poprosi uÅ¼ytkownika o podanie liczby dodatniej i obliczy jej pierwiastek kwadratowy, jeÅ›li jest to moÅ¼liwe.WyÅ›wietl wynik lub odpowiedni komunikat, jeÅ›li liczba jest ujemna.
+* .Program sprawdzajÄ…cy czy podana data jest poprawna(np.sprawdzajÄ…c, czy dzieÅ„ jest z zakresu od 1 do 31, miesiÄ…c od 1 do 12 itd.)
 */
 
 
 
-//Napisz program, który poprosi u¿ytkownika o podanie dwóch liczb ca³kowitych i sprawdzi, czy s¹ one równe.Wyœwietl odpowiedni komunikat.
+//Napisz program, ktÃ³ry poprosi uÅ¼ytkownika o podanie dwÃ³ch liczb caÅ‚kowitych i sprawdzi, czy sÄ… one rÃ³wne.WyÅ›wietl odpowiedni komunikat.
 void task5()
 {
 	int firstNumber, secondNumber;
-	std::cout << "Podaj  liczbe ca³kowit¹\n ";
+	std::cout << "Podaj  liczbe caÅ‚kowitÄ…\n ";
 	std::cin >> firstNumber;
-	std::cout << "Podaj liczbe ca³kowit¹\n ";
+	std::cout << "Podaj liczbe caÅ‚kowitÄ…\n ";
 	std::cin >> secondNumber;
 
 	if (secondNumber == firstNumber)
-		std::cout << "Liczby s¹ równe\n ";
+		std::cout << "Liczby sÄ… rÃ³wne\n ";
 	else
-		std::cout << "Liczby nie s¹ równe\n ";
+		std::cout << "Liczby nie sÄ… rÃ³wne\n ";
 
 }
 
-//Napisz program, który poprosi u¿ytkownika o podanie wieku i sprawdzi, czy osoba jest pe³noletnia.Wyœwietl odpowiedni komunikat.
+//Napisz program, ktÃ³ry poprosi uÅ¼ytkownika o podanie wieku i sprawdzi, czy osoba jest peÅ‚noletnia.WyÅ›wietl odpowiedni komunikat.
 void task6()
 {
 	int number;
 	std::cout << "Podaj wiek \n";
 	std::cin >> number;
 	if (number >= 18)
-		std::cout << "Jesteœ pe³noletni\n";
+		std::cout << "JesteÅ› peÅ‚noletni\n";
 	else
-		std::cout << "Jestes nie pe³noletni\n";
+		std::cout << "Jestes nie peÅ‚noletni\n";
 }
 
-//Napisz program, który poprosi u¿ytkownika o podanie liczby ca³kowitej i obliczy jej wartoœæ bezwzglêdn¹. Wyœwietl wynik.
+//Napisz program, ktÃ³ry poprosi uÅ¼ytkownika o podanie liczby caÅ‚kowitej i obliczy jej wartoÅ›Ä‡ bezwzglÄ™dnÄ…. WyÅ›wietl wynik.
 void task7()
 {
 	int number;
-	std::cout << "Podaj liczbe ca³kowit¹ \n";
+	std::cout << "Podaj liczbe caÅ‚kowitÄ… \n";
 	std::cin >> number;
 	if (number < 0)
-		std::cout << "Wartoœæ bezwzglêdna: " << number * -1 << " /n";
+		std::cout << "WartoÅ›Ä‡ bezwzglÄ™dna: " << number * -1 << " /n";
 	else
-		std::cout << "Wartoœæ bezwzglêdna:  " << number << " /n";
+		std::cout << "WartoÅ›Ä‡ bezwzglÄ™dna:  " << number << " /n";
 }
 
 
-//Napisz program, który poprosi u¿ytkownika o podanie liczby od 1 do 7 i wyœwietli odpowiadaj¹cy mu dzieñ tygodnia.
+//Napisz program, ktÃ³ry poprosi uÅ¼ytkownika o podanie liczby od 1 do 7 i wyÅ›wietli odpowiadajÄ…cy mu dzieÅ„ tygodnia.
 void task8()
 {
 	int numberOfDay;
 	std::cout << "Podaj liczbe od 1 do 7 \n";
 	std::cin >> numberOfDay;
 	if (numberOfDay == 1)
-		std::cout << "Dzieñ tygodnia to poniedzia³ek \n";
+		std::cout << "DzieÅ„ tygodnia to poniedziaÅ‚ek \n";
 	if (numberOfDay == 2)
-		std::cout << "Dzieñ tygodnia to wtorek \n";
+		std::cout << "DzieÅ„ tygodnia to wtorek \n";
 	if (numberOfDay == 3)
-		std::cout << "Dzieñ tygodnia to œroda \n";
+		std::cout << "DzieÅ„ tygodnia to Å›roda \n";
 	if (numberOfDay == 4)
-		std::cout << "Dzieñ tygodnia to czwartek \n";
+		std::cout << "DzieÅ„ tygodnia to czwartek \n";
 	if (numberOfDay == 5)
-		std::cout << "Dzieñ tygodnia to pi¹tek \n";
+		std::cout << "DzieÅ„ tygodnia to piÄ…tek \n";
 	if (numberOfDay == 6)
-		std::cout << "Dzieñ tygodnia to sobota \n";
+		std::cout << "DzieÅ„ tygodnia to sobota \n";
 	if (numberOfDay == 7)
-		std::cout << "Dzieñ tygodnia to niedziela \n";
+		std::cout << "DzieÅ„ tygodnia to niedziela \n";
 }
 
 
-//Napisz program, który poprosi u¿ytkownika o podanie dwóch liczb ca³kowitych i wyœwietli wiêksz¹ z nich.
+//Napisz program, ktÃ³ry poprosi uÅ¼ytkownika o podanie dwÃ³ch liczb caÅ‚kowitych i wyÅ›wietli wiÄ™kszÄ… z nich.
 void task9()
 {
 	int number1, number2;
-	std::cout << "Podaj 1 liczbe ca³kowit¹ \n";
+	std::cout << "Podaj 1 liczbe caÅ‚kowitÄ… \n";
 	std::cin >> number1;
-	std::cout << "Podaj 2 liczbe ca³kowit¹ \n";
+	std::cout << "Podaj 2 liczbe caÅ‚kowitÄ… \n";
 	std::cin >> number2;
 	if (number1 > number2)
-		std::cout << "Lczba 1 jest wiêksza od liczby 2 \n";
-	else 
-		std::cout << "Lczba 2 jest wiêksza od liczby 1\n";
+		std::cout << "Lczba 1 jest wiÄ™ksza od liczby 2 \n";
+	else
+		std::cout << "Lczba 2 jest wiÄ™ksza od liczby 1\n";
 
 }
 
-//Napisz program, który poprosi u¿ytkownika o podanie roku i sprawdzi, czy jest to rok przestêpny.Wyœwietl odpowiedni komunikat.
+//Napisz program, ktÃ³ry poprosi uÅ¼ytkownika o podanie roku i sprawdzi, czy jest to rok przestÄ™pny.WyÅ›wietl odpowiedni komunikat.
 void task10()
 {
 	int year;
 	std::cout << "Podaj rok \n";
 	std::cin >> year;
 
-	if (year > 0 && year % 4 ==0  && year % 100 !=0 || year % 400==0 )
-		std::cout << "Rok jest przestêpny";
+	if (year > 0 && year % 4 == 0 && year % 100 != 0 || year % 400 == 0)
+		std::cout << "Rok jest przestÄ™pny";
 	else
-		std::cout << "Rok nie jest przestêpny";
-		
+		std::cout << "Rok nie jest przestÄ™pny";
+
+}
+
+//Napisz program, ktÃ³ry poprosi uÅ¼ytkownika o podanie liczby caÅ‚kowitej i sprawdzi, czy jest ona podzielna zarÃ³wno przez 3, jak i przez 5. WyÅ›wietl odpowiedni komunikat.
+void task11()
+{
+	int number;
+	std::cout << "Podaj liczbe caÅ‚kowitÄ… \n";
+	std::cin >> number;
+
+	if (number / 3 && number / 5 && number % 3 == 0 && number % 5 == 0)
+		std::cout << "Liczba jest podzielna przez 3 i 5 \n";
+	else
+		std::cout << "Liczba nie jest podzielna przez 3 i 5 \n";
+
+
 
 
 }
 
+//Napisz program, ktÃ³ry poprosi uÅ¼ytkownika o podanie masy ciaÅ‚a(w kilogramach) i wzrostu(w metrach).
+//Na podstawie tych danych oblicz wskaÅºnik BMI(Body Mass Index) i wyÅ›wietl odpowiedni komunikat informujÄ…cy o stanie zdrowia.
+// mniej niÅ¼ 16 - wygÅ‚odzenie
+/* 16 - 16.99 - wychudzenie
+â— 17 - 18.49 - niedowaga
+â— 18.5 - 24.99 - wartoÅ›Ä‡ prawidÅ‚owa
+â— 25 - 29.99 - nadwaga
+â— 30 - 34.99 - I stopieÅ„ otyÅ‚oÅ›ci
+â— 35 - 39.99 - II stopieÅ„ otyÅ‚oÅ›ci
+â— powyÅ¼ej 40 - otyÅ‚oÅ›Ä‡ skrajna
+*/
+
+void task12()
+{
+	int weight, height, bmi;
+	std::cout << "Podaj wagÄ™ w kilogramach \n";
+	std::cin >> weight;
+	std::cout << "Podaj wysokoÅ›Ä‡ w metrach \n";
+	std::cin >> height;
+	bmi = weight / (height * height);
+	if (bmi < 16)
+		std::cout << "wygÅ‚odzenie";
+	if (bmi >= 16 && bmi <= 16.99)
+		std::cout << "wychudzenie";
+	if (bmi >= 17 && bmi <= 18.49)
+		std::cout << "niedowaga";
+	if (bmi >= 18.5 && bmi <= 24.99)
+		std::cout << "wartoÅ›Ä‡ prawidÅ‚owa";
+	if (bmi >= 15 && bmi <= 29.99)
+		std::cout << "nadwaga";
+	if (bmi >= 30 && bmi <= 34.99)
+		std::cout << "I stopieÅ„ otyÅ‚oÅ›ci";
+	if (bmi >= 35 && bmi <= 39.99)
+		std::cout << "II stopieÅ„ otyÅ‚oÅ›ci";
+	if (bmi > 20)
+		std::cout << "otyÅ‚oÅ›Ä‡ skrajna";
+
+}
 
 
+//Napisz program, ktÃ³ry poprosi uÅ¼ytkownika o podanie dÅ‚ugoÅ›ci trzech odcinkÃ³w i sprawdzi, czy moÅ¼na zbudowaÄ‡ z nich trÃ³jkÄ…t. WyÅ›wietl odpowiedni komunikat.
+void task13()
+{
+	int firstSection, secondSection, thirdSection;
+	std::cout << "Podaj dÅ‚. odcinka 1 ";
+	std::cin >> firstSection;
+	std::cout << "Podaj dÅ‚. odcinka 2 ";
+	std::cin >> secondSection;
+	std::cout << "Podaj dÅ‚. odcinka 3 ";
+	std::cin >> thirdSection;
+	if (firstSection > secondSection + thirdSection && secondSection > firstSection + thirdSection && thirdSection > secondSection + firstSection)
+		std::cout << "MoÅ¼na zbudowaÄ‡ trÃ³jkÄ…t ";
+	else
+		"Nie moÅ¼na zbudowaÄ‡ trÃ³jkÄ…ta";
+}
 
 
 int main()
@@ -253,5 +319,8 @@ int main()
 	//task7();
 	//task8();
 	//task9();
-	task10();
+	//task10();
+	//task11();
+	//task12();
+	task13();
 }
