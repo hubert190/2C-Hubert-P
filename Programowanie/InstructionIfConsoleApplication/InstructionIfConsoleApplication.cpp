@@ -20,6 +20,10 @@ F	F		 F			  F			 T
 F	T		 F			  T			T
 T	F        F			  T			F
 T	T		 T			  T			F
+
+pow (number, 0.25) - pierwiatek do potęgi 4
+pow (number, 0.5)   lub  sqrt(number)  - pierwiastek do 2
+
 */
 
 //Napisz program, który wyświetli informacje, czy liczba jest dodatnia czy nie.
@@ -131,13 +135,6 @@ void task4()
 
 }
 
-/*
-Na podstawie tych danych oblicz wskaźnik BMI(Body Mass Index) i wyświetl odpowiedni komunikat informujący o stanie zdrowia.
-* .Napisz program, który poprosi użytkownika o podanie długości trzech odcinków i sprawdzi, czy można zbudować z nich trójkąt.Wyświetl odpowiedni komunikat.
-* .Napisz program, który poprosi użytkownika o podanie liczby dodatniej i obliczy jej pierwiastek kwadratowy, jeśli jest to możliwe.Wyświetl wynik lub odpowiedni komunikat, jeśli liczba jest ujemna.
-* .Program sprawdzający czy podana data jest poprawna(np.sprawdzając, czy dzień jest z zakresu od 1 do 31, miesiąc od 1 do 12 itd.)
-*/
-
 
 
 //Napisz program, który poprosi użytkownika o podanie dwóch liczb całkowitych i sprawdzi, czy są one równe.Wyświetl odpowiedni komunikat.
@@ -175,9 +172,9 @@ void task7()
 	std::cout << "Podaj liczbe całkowitą \n";
 	std::cin >> number;
 	if (number < 0)
-		std::cout << "Wartość bezwzględna: " << number * -1 << " /n";
+		std::cout << "Wartość bezwzględna: " << number * -1 << " \n";
 	else
-		std::cout << "Wartość bezwzględna:  " << number << " /n";
+		std::cout << "Wartość bezwzględna:  " << number << " \n";
 }
 
 
@@ -201,18 +198,21 @@ void task8()
 		std::cout << "Dzień tygodnia to sobota \n";
 	if (numberOfDay == 7)
 		std::cout << "Dzień tygodnia to niedziela \n";
+	
+	if (numberOfDay < 1 || numberOfDay > 7)
+		std::cout << "Liczba nie jest dniem \n ";
 }
 
 
 //Napisz program, który poprosi użytkownika o podanie dwóch liczb całkowitych i wyświetli większą z nich.
 void task9()
 {
-	int number1, number2;
+	int firstNumber, secondNumber;
 	std::cout << "Podaj 1 liczbe całkowitą \n";
-	std::cin >> number1;
+	std::cin >> firstNumber;
 	std::cout << "Podaj 2 liczbe całkowitą \n";
-	std::cin >> number2;
-	if (number1 > number2)
+	std::cin >> secondNumber;
+	if (firstNumber > secondNumber)
 		std::cout << "Lczba 1 jest większa od liczby 2 \n";
 	else
 		std::cout << "Lczba 2 jest większa od liczby 1\n";
@@ -291,10 +291,10 @@ void task12()
 
 
 //Napisz program, który poprosi użytkownika o podanie długości trzech odcinków i sprawdzi, czy można zbudować z nich trójkąt. Wyświetl odpowiedni komunikat.
-void task13()
+void task13() 
 {
 	int firstSection, secondSection, thirdSection;
-	std::cout << "Podaj dł. odcinka 1 ";
+		std::cout << "Podaj dł. odcinka 1 ";
 	std::cin >> firstSection;
 	std::cout << "Podaj dł. odcinka 2 ";
 	std::cin >> secondSection;
@@ -303,7 +303,36 @@ void task13()
 	if (firstSection > secondSection + thirdSection && secondSection > firstSection + thirdSection && thirdSection > secondSection + firstSection)
 		std::cout << "Można zbudować trójkąt ";
 	else
-		"Nie można zbudować trójkąta";
+		std::cout << "Nie można zbudować trójkąta";
+}
+
+//Napisz program, który poprosi użytkownika o podanie liczby dodatniej i obliczy jej pierwiastek kwadratowy, jeśli jest to możliwe.Wyświetl wynik lub odpowiedni komunikat, jeśli liczba jest ujemna.
+void task14()
+{
+	int number, root;
+	std::cout << "Podaj liczbe dodatnią ";
+	std::cin >> number;
+	root = sqrt(number);
+	if (root < 0)
+		std::cout << "Liczba jest ujemna ";
+	else
+		std::cout << "Pierwiastek kwadratowy z liczby wynosi: " << root;
+
+}
+
+
+//Program sprawdzający czy podana data jest poprawna(np.sprawdzając, czy dzień jest z zakresu od 1 do 31, miesiąc od 1 do 12 itd.)
+void task15()
+{
+	int month, day, year;
+	std::cout << "Podaj dzień \n ";
+	std::cin >> day;
+	std::cout << "Podaj miesiąc \n ";
+	std::cin >> month;
+	std::cout << "Podaj rok \n ";
+	std::cin >> year;
+
+
 }
 
 
@@ -317,10 +346,12 @@ int main()
 	//task5();
 	//task6();
 	//task7();
-	//task8();
+	task8();
 	//task9();
 	//task10();
 	//task11();
 	//task12();
-	task13();
+	//task13();
+	//task14();
+	//task15();
 }
