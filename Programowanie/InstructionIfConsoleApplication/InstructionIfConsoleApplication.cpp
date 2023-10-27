@@ -9,6 +9,9 @@ Operatory warunkowe:
 ==-równe
 !=-różne
 
+
+//DRY - nie powtarzaj się
+
 Operatory logiczne:
 && - and
 ! - not
@@ -201,6 +204,62 @@ void task8()
 	
 	if (numberOfDay < 1 || numberOfDay > 7)
 		std::cout << "Liczba nie jest dniem \n ";
+
+
+	//lub 
+
+	
+int dayOfWeek;
+std::cout << "Podaj numer dnia tygodnia\n";
+std::cin >> dayOfWeek;
+
+if (dayOfWeek == 1)
+	std::cout << "Podniedziałek\n";
+else if (dayOfWeek == 2)
+	std::cout << "Wtorek\n";
+else if (dayOfWeek == 3)
+	std::cout << "Środa\n";
+else if (dayOfWeek == 4)
+	std::cout << "Czwartek\n";
+else if (dayOfWeek == 5)
+	std::cout << "Piątek\n";
+else if (dayOfWeek == 6)
+	std::cout << "Sobota\n";
+else if (dayOfWeek == 7)
+	std::cout << "Niedziela\n";
+else
+	std::cout << "Dzień niepoprawny\n";
+
+//lub
+
+switch (dayOfWeek)
+{
+case 1:
+	std::cout << "Podniedziałek\n";
+	break;
+case 2:
+	std::cout << "Wtorek\n";
+	break;
+case 3:
+	std::cout << "Środa\n";
+	break;
+case 4:
+	std::cout << "Czwartek\n";
+	break;
+case 5:
+	std::cout << "Piątek\n";
+	break;
+case 6:
+	std::cout << "Sobota\n";
+	break;
+case 0:
+case 7:
+	std::cout << "Niedziela\n";
+	break;
+default:
+	std::cout << "Dzień niepoprawny\n";
+}
+
 }
 
 
@@ -256,7 +315,7 @@ void task11()
 /* 16 - 16.99 - wychudzenie
 ● 17 - 18.49 - niedowaga
 ● 18.5 - 24.99 - wartość prawidłowa
-● 25 - 29.99 - nadwaga
+● 25 - 29.99 - nadwagac 
 ● 30 - 34.99 - I stopień otyłości
 ● 35 - 39.99 - II stopień otyłości
 ● powyżej 40 - otyłość skrajna
@@ -324,15 +383,32 @@ void task14()
 //Program sprawdzający czy podana data jest poprawna(np.sprawdzając, czy dzień jest z zakresu od 1 do 31, miesiąc od 1 do 12 itd.)
 void task15()
 {
-	int month, day, year;
-	std::cout << "Podaj dzień \n ";
-	std::cin >> day;
-	std::cout << "Podaj miesiąc \n ";
-	std::cin >> month;
-	std::cout << "Podaj rok \n ";
-	std::cin >> year;
+	{
+		int day, month, year;
+		std::cout << "Podaj dzień\n";
+		std::cin >> day;
+		std::cout << "Podaj miesiąc\n";
+		std::cin >> month;
+		std::cout << "Podaj rok\n";
+		std::cin >> year;
 
+		if (day >= 1 && day <= 31
+			&& month >= 1 && month <= 12
+			&& year != 0
 
+			&& ((month == 4 || month == 6 || month == 9 || month == 11) && day != 31)
+
+			&& month == 2 && (day >= 28
+				|| day == 29 && (year % 4 == 0 && year % 100 != 0 || year % 400 == 0))
+			)
+		{
+			std::cout << "Data " << day << "." << month << "." << year << " jest poprawna\n";
+		}
+		else
+		{
+			std::cout << "Data nie jest poprawna";
+		}
+	}
 }
 
 
@@ -346,7 +422,7 @@ int main()
 	//task5();
 	//task6();
 	//task7();
-	task8();
+	//task8();
 	//task9();
 	//task10();
 	//task11();
@@ -354,4 +430,3 @@ int main()
 	//task13();
 	//task14();
 	//task15();
-}
