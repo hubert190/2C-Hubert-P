@@ -170,6 +170,7 @@ void task6()
 
 //Napisz program, który poprosi użytkownika o podanie liczby całkowitej i obliczy jej wartość bezwzględną. Wyświetl wynik.
 void task7()
+
 {
 	int number;
 	std::cout << "Podaj liczbe całkowitą \n";
@@ -179,7 +180,6 @@ void task7()
 	else
 		std::cout << "Wartość bezwzględna:  " << number << " \n";
 }
-
 
 //Napisz program, który poprosi użytkownika o podanie liczby od 1 do 7 i wyświetli odpowiadający mu dzień tygodnia.
 void task8()
@@ -412,19 +412,6 @@ void task15()
 }
 
 
-// napisz program który ma pobrać od użytkownika l. dodatnią
-// zabezpiecz program przed liczbą ujemną
-void task16()
-{
-	int number;
-	std::cout << "Podaj l. dodatnią ";
-	std::cin >> number;
-
-	std::cout << "Pobrana liczba dodatnia: " << number << "\n";
-
-
-}
-
 int main()
 {
 	setlocale(LC_CTYPE, "polish");
@@ -443,6 +430,5 @@ int main()
 	//task13();
 	//task14();
 	//task15();
-	void task16();
 }
 
