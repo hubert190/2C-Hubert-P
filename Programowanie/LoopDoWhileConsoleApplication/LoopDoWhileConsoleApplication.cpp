@@ -90,25 +90,34 @@ void task4()
 //gdzie x podaje u¿ytkownik
 {
 	//std::cout << "1,2,3,4,5,6";
+	
 	unsigned long long upperRange, currentNumber;
 	std::cout << "Podaj górny zakres wiêkszy b¹dŸdŸ równy 1 \n";
 	std::cin >> upperRange;
+	
 	/*std::cout << "1, ";
 	if (upperRange > 1)
 	{
 		std::cout << "2, ";
 		if (upperRange > 2)
 		{
+
 			std::cout << "3, ";
 			if (upperRange > 3)
 		}
 	}....*/
 
-	unsigned long long upperRange = 0;
+
+	unsigned long long currentNumber = 0;
 	do
 	{
-		currentNumber = currentNumber + 1;
-		std::cout << currentNumber << ", ";
+
+
+		//currentNumber= currentNumber+1
+		//currentNumber++
+		//currentNumber += 1;
+		//++currentNumber
+		std::cout << currentNumber << " , ";
 	} while (upperRange > currentNumber);
 }
 
