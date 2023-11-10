@@ -121,6 +121,28 @@ void task4()
 	} while (upperRange > currentNumber);
 }
 
+void task5()
+{
+	int number;
+	std::cout << "Podaj liczbe ";
+	std::cin >> number;
+	
+	int sum = 1;
+	int rest;
+
+	rest = number % 10;
+	sum = rest + sum;
+	number = number / 10;
+
+	
+
+
+		}
+
+
+}
+
+
 
 
 int main()
@@ -128,5 +150,6 @@ int main()
 	//task1();
 	//task2();
 	//task3();
-	task4();
+	//task4();
+	task5();
 }
