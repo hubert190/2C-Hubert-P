@@ -173,7 +173,7 @@ void task5()
 void task6()
 {
 
-	int numberFromUser, sum, rest,number;
+	int numberFromUser, sum, rest, number;
 	sum = 0;
 	rest = 0;
 
@@ -190,7 +190,7 @@ void task6()
 			std::cout << "Podaj liczbê\n ";
 			std::cin >> numberFromUser;
 			sum += numberFromUser;
-			rest += 1;                                   
+			rest += 1;
 		}
 
 
@@ -217,13 +217,31 @@ void task6()
 	std::cout << "Srednia arytmetyczna wynosi " << number;
 
 
-	
+
 }
 
+
+//napisz program który poprosi u¿ytkownika o podanie dowolnej l. ca³kowitej
+//nastêpnie program obliczy iloœæ cyfr
 void task7()
 {
+	int numberFromUser;
+	int	sum = 0;
+	int	rest;
+	int number = 0;
+	std::cout << "Podaj liczbê \n";
+	std::cin >> numberFromUser;
 	
-	
+	do
+	{
+		rest = numberFromUser % 10;
+		sum = numberFromUser + rest;
+		numberFromUser = numberFromUser / 10;
+		number++;
+	} while (numberFromUser != 0);
+
+	std::cout << "Iloœæ liczb " << number; 
+
 }
 
 
@@ -234,10 +252,6 @@ int main()
 	//task3();
 	//task4();
 	//task5();
-task6();
-	//task7();
+	//task6();
+	task7();
 }
-
-
-
-
