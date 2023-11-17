@@ -226,22 +226,17 @@ void task6()
 void task7()
 {
 	int numberFromUser;
-	int	sum = 0;
-	int	rest;
-	int number = 0;
+	int	rest = 0;
 	std::cout << "Podaj liczbê \n";
 	std::cin >> numberFromUser;
 	
 	do
 	{
 		rest = numberFromUser % 10;
-		sum = numberFromUser + rest;
+		std::cout << rest << ", ";
 		numberFromUser = numberFromUser / 10;
-		number++;
+
 	} while (numberFromUser != 0);
-
-	std::cout << "Iloœæ liczb " << number; 
-
 }
 
 
