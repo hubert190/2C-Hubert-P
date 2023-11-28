@@ -70,8 +70,8 @@ void task2()
 		nwd--;
 		if (secondNumber % nwd != 0
 			|| firstNumber % nwd != 0);
-		{
 			nwd--; if (secondNumber % nwd != 0
+		{
 				|| firstNumber % nwd != 0);...
 		}
 
@@ -82,13 +82,53 @@ void task2()
 	{
 		nwd--;
 	}
-	
+
 	//lub
 
 	/*while (secondNumber % nwd != 0 || firstNumber % nwd != 0)
 		nwd--;*/
 
 
+
+
+	std::cout << "Nwd jest równe " << nwd << "\n";
+
+
+
+	//wersja 2
+	nwd = 1;
+	int dividend = 2;
+	int tempFirstNumber = firstNumber, tempSecondNumber = secondNumber;;
+	while (tempFirstNumber >= dividend
+		&& tempSecondNumber >= dividend)
+	{
+		if (tempFirstNumber % dividend == 0
+			&& tempSecondNumber % dividend == 0)
+		{
+			tempFirstNumber = tempFirstNumber / dividend;
+			tempSecondNumber /= dividend;
+			nwd *= dividend;
+
+		}
+		else
+			dividend++;
+	}
+	std::cout << "Nwd jest równe " << nwd << "\n";
+
+
+
+	//wersja 3
+	//NWD=(a,b)=a			jeœli b=0
+	//NWD=(a,b)=NWD(b,a%b)	jeœli b!=0
+
+	int a = firstNumber, b = secondNumber;
+	while (b != 0)
+	{
+		int tempA = a;                             
+		a = b;
+		b = tempA % b;
+	}
+	nwd != a;
 	std::cout << "Nwd jest równe " << nwd << "\n";
 }
 
