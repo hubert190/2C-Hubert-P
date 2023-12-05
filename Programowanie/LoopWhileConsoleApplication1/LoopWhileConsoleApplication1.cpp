@@ -124,7 +124,7 @@ void task2()
 	int a = firstNumber, b = secondNumber;
 	while (b != 0)
 	{
-		int tempA = a;                             
+		int tempA = a;
 		a = b;
 		b = tempA % b;
 	}
@@ -196,13 +196,42 @@ void task3()
 
 	} while (tempNumber > 0);
 
-	if (number=reverseNumber)
+	if (number = reverseNumber)
 		std::cout << "Liczba jest palindromem\n";
 	else
 		std::cout << "Liczba nie jest palindromem\n";
-},
+}
 
+void task4()
+//napisz program który wyœwietli Hello word tyle ile razy chce u¿ytkownik
+{
+	int number = 0;
+	int howManyTime;
+	std::cout << "ile razy mam powtórzyæ?\n";
+	std::cin >> howManyTime;
 
+	while (number != howManyTime)
+	{
+		std::cout << "Hello word\n";
+		number++;
+	}
+}
+
+void task5()
+//napisz program który wyœwietli l. parzyste do podanej przez u¿ytkownika liczby
+{
+	int upperRange;
+	std::cout << "Podaj górn¹ granice \n";
+	std::cin >> upperRange;
+
+	int i = 0;
+	while (i <= upperRange)
+	{
+		std::cout << i << "\n";
+		i += 2;
+	}
+
+}
 
 
 int main()
@@ -210,5 +239,7 @@ int main()
 	setlocale(LC_CTYPE, "polish");
 	//task1();
 	//task2();
-	task3();
+	//task3();
+	//task4();
+	task5();
 }
