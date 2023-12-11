@@ -80,20 +80,87 @@ void task5()
 
 }
 
-//Program obliczaj¹cy n!.
+
+//Program wyœwietlaj¹cy na ekranie tabliczkê mno¿enia od 1 do 9 (np. 1x1 = 1, 1x2 = 2, 1x3 = 3 itd.).
 void task6()
 {
+	int number, i;
 
+	for (i = 0; i <= 9; i++)
+	{
+		std::cout << "1x" << i << " = ";
+		number = 1 * i;
+		std::cout << number << "\n";
+	}
 }
+
+//Program wyœwietlaj¹cy na ekranie wszystkie liczby podzielne przez 3 z zakresu od 1 do 100
+void task7()
+{
+	int number;
+	std::cout << "Liczby podzielneprzez 3 z zakresu 1 - 100:\n";
+
+	for (int i = 1; i <= 100; i++)
+	{
+		if (i % 3 == 0)
+			std::cout << i << "\n";
+	}
+}
+
+//Program obliczaj¹cy sumê kwadratów liczb od 1 do 10
+void task8()
+{
+	int number;
+	int sum = 0;
+
+	for (int i = 1; i <= 10; i++)
+	{
+		number = i * i;
+		sum = sum + number;
+	}
+	std::cout << "Suma kwadratow liczb 1 - 10 = " << sum << "\n";
+}
+
+
+//Program obliczaj¹cy n!  (4! = 1*2*3*4)
+void task9()
+{
+	int number;
+	int x = 0;
+	int result = 1;
+	std::cout << "Podaje liczbe: ";
+	std::cin >> number;
+
+	for (int i = 1; i <= number; i++)
+	{
+		x++;
+		result = result * x;
+	}
+	std::cout << "n! = " << result;
+}
+
+//Program wyœwietlaj¹cy na ekranie ci¹g Fibonacciego do 20 elementu
+// (ci¹g Fibonacciego to ci¹g gdzie ka¿dy element jest sum¹ dwóch poprzednich, np. 0, 1, 1, 2, 3, 5, 8, 13 itd.)
+void task10()
+{
+	int number=0;
+	for (int i=0;i<10;i++)
+	{
+		std::cout << i;
+		
+	}
+}
+
+//Program, kóry wyœwietli poni¿sze cztery zwory:
+//	****    54321        121212        122333
+//	***     65432        212121        223334444
+//	**      76543        121212        333444455555
+//	*       87654        212121        444455555666666
 
 int main()
 {
 	setlocale(LC_CTYPE, "polish");
-	//task1();
-	//task2();
-	//task3();
-	//task4();
-	//task5();
-	task6()
+	task10();
+	
 }
 
