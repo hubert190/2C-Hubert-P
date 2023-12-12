@@ -139,28 +139,53 @@ void task9()
 	std::cout << "n! = " << result;
 }
 
-//Program wyœwietlaj¹cy na ekranie ci¹g Fibonacciego do 20 elementu
+
+//Program wyœwietlaj¹cy na ekranie ci¹g Fibonacciego do 20 elementu 
 // (ci¹g Fibonacciego to ci¹g gdzie ka¿dy element jest sum¹ dwóch poprzednich, np. 0, 1, 1, 2, 3, 5, 8, 13 itd.)
 void task10()
 {
-	int number=0;
-	for (int i=0;i<10;i++)
+	int f2 = 0;
+	int f1 = 1;
+	std::cout << f2 << ", " << f1 << ", ";
+	for (int i = 2; i < 20; i++)
 	{
-		std::cout << i;
-		
+		int f = f1 + f2;
+		std::cout << f << ", ";
+		f2 = f1;
+		f1 = f;
+	}
+}
+
+//Program wyœwietlaj¹cy na ekranie silnie z liczb od 1 do 10 (np. 1!, 2!, 3!, 4! itd.)
+void task11()
+{
+	int number;
+	std::cout << "Podaj liczbê\n";
+	std::cin >> number;
+
+	long long factorial = 1;
+	for (int i = 1; i <= number; i++)
+	{
+		factorial = factorial * i;
+		std::cout << i << "!=" << factorial << "\n";
 	}
 }
 
 //Program, kóry wyœwietli poni¿sze cztery zwory:
-//	****    54321        121212        122333
-//	***     65432        212121        223334444
-//	**      76543        121212        333444455555
-//	*       87654        212121        444455555666666
+//	****       54321        121212        122333
+//	***        65432        212121        223334444
+//	**         76543        121212        333444455555
+//	*          87654        212121        444455555666666
+void task12()
+{
+
+	
+}
 
 int main()
 {
 	setlocale(LC_CTYPE, "polish");
-	task10();
+	task12();
 	
 }
 
