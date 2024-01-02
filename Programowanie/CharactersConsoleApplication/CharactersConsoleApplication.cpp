@@ -159,32 +159,85 @@ void task9()
 	std::cout << numberBin;
 }
 
-//*Program sprawdzaj¹cy czy podany ci¹g znaków jest palindromem(czyli takim, który czytany od ty³u jest taki sam, jak czytany od przodu, np. "kajak")
+//Napisz program, który wczyta ³añcuch znaków i policzy ile jest ma³ych liter 'a'.
 void task10()
 {
+	std::string textFromUser;
+	std::cout << "Podaj ³añcuch znaków\n";
+	std::cin >> textFromUser;
 
+	int numberOfCharacters = 0;
+
+	//std::cout << "Pierwszy znak to " << textFromUser[0] << "\n";
+	//textFromUser[1] = 'x';
+	//std::cout << "Iloœæ znaków " << textFromUser.length()  << "\n";
+
+	for (int i = 0; i < textFromUser.length(); i++)
+	{
+		if (textFromUser[i] == 'a')
+			numberOfCharacters++;
+	}
+
+	std::cout << "Ma³ych liter 'a' jest " << numberOfCharacters << "\n";
 }
 
-
-//Algorytm szyfrowania AtBash Cipher - algorytm szyfruj¹cy, w którym ka¿da litera jest zamieniana na literê z przeciwnej strony alfabetu(np.A na Z, B na Y itd.)
+//Program sprawdzaj¹cy czy podany ci¹g znaków jest palindromem (czyli takim, który czytany od ty³u jest taki sam, jak czytany od przodu, np. "kajak")
 void task11()
 {
-	char word,reversedWord;
-	std::cout << "Podaj ci¹g znaków";
-	std::cin >> word;
+	std::string textFromUser;
+	std::cout << "Podaj tekst\n";
+	std::cin >> textFromUser;
 
-	for (int i = 0; i < .length(); i++)
+	//wersja 1
+	std::string reverseText = "";
+	for (int i = textFromUser.length() - 1; i >= 0; i--)
+	{
+		reverseText = reverseText + textFromUser[i];
+	}
+
+	/*for (int i = 0; i < textFromUser.length(); i++)
+	{
+		reverseText = textFromUser[i] + reverseText;
+	}*/
+
+	if (textFromUser == reverseText)
+		std::cout << "Ten tekst jest palindromem\n";
+	else
+		std::cout << "Ten tekst nie jest palindromem\n";
+
+	//wersja 2
+	bool isPalindrome = true;
+
+	for (int signFromBegining = 0, signFormEnd = textFromUser.length() - 1; signFromBegining < signFormEnd; signFromBegining++, signFormEnd--)
+	{
+		if (textFromUser[signFromBegining] != textFromUser[signFormEnd])
+		{
+			isPalindrome = false;
+			break;
+		}
+	}
+
+	if (isPalindrome /*== true*/)
+		std::cout << "Ten tekst jest palindromem\n";
+	else
+		std::cout << "Ten tekst nie jest palindromem\n";
+}
+
+//Algorytm szyfrowania AtBash Cipher - algorytm szyfruj¹cy, w którym ka¿da litera jest zamieniana na literê z przeciwnej strony alfabetu (np. A na Z, B na Y itd.)
+void task12()
+{
+	std::string codeFromUser,reversedcode;
+	std::cout << "Podaj kod\n";
+	std::cin >> codeFromUser;
+	for (int i = 0; i < reversedcode.length(); i++)
 	{
 
 	}
-	
-
 }
 
 
-
-
 int main()
+
 {
 	setlocale(LC_CTYPE, "polish");
 	task10();
