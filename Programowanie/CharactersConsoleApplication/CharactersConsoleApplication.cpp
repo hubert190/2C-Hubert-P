@@ -92,7 +92,6 @@ void task6()
 
 * Program który na wejœciu przyjmie równanie a na wyjœciu da równanie w odwrotnej notacji polskiej ONP. Np. na wejœciu 2+3*4 na wyjœcu da 234*+
 * Program, który na wejœciu przyjmie rówanie w ONP a na wyjœciu wyœwietli wynik rówania.
-* Algorytm szyfrowania AtBash Cipher - algorytm szyfruj¹cy, w którym ka¿da litera jest zamieniana na literê z przeciwnej strony alfabetu (np. A na Z, B na Y itd.)
 */
 
 //Napisz program, który bêdzie prosi³ o has³o.Nie przepuœci dalej dopóki nie zostanie ono podane prawid³owo.
@@ -226,21 +225,40 @@ void task11()
 //Algorytm szyfrowania AtBash Cipher - algorytm szyfruj¹cy, w którym ka¿da litera jest zamieniana na literê z przeciwnej strony alfabetu (np. A na Z, B na Y itd.)
 void task12()
 {
-	std::string codeFromUser,reversedcode;
+	std::string codeFromUser;
 	std::cout << "Podaj kod\n";
 	std::cin >> codeFromUser;
-	for (int i = 0; i < reversedcode.length(); i++)
+	for (int i = 0; i <codeFromUser.length(); i++)
 	{
-
+		if (codeFromUser[i] >= 'a' && codeFromUser[i] <= 'z');
+		codeFromUser[i] = 'z' - (codeFromUser[i] - 'a');
+		
+		if (codeFromUser[i] >= 'A' && codeFromUser[i] <= 'Z');
+		codeFromUser[i] = 'Z' - (codeFromUser[i] - 'A');
 	}
+	std::cout << codeFromUser << '\n';
 }
+
+//Program implementuj¹cy algorytm szyfrowania Cezara(proste szyfrowanie, w którym ka¿dy znak w tekœcie jest zastêpowany innym znakiem, przesuniêtym o sta³¹ liczbê pozycji w alfabecie).
+void task13()
+{
+	std::string textFromUser;
+	std::cout << "Podaj ³añcuch znaków\n";
+	std::cin >> textFromUser;
+	for (int i = 0;  i< textFromUser.length() ; i++)
+	{
+		textFromUser[i] = textFromUser[i]++;
+	}
+	std::cout << textFromUser << "\n";
+}
+
 
 
 int main()
 
 {
 	setlocale(LC_CTYPE, "polish");
-	task10();
+	task13();
 
 }
 
