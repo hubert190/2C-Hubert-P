@@ -162,7 +162,7 @@ void task11()
 	std::cout << "Metry w przeliczeniu na milimetry wynosi: " << milimeter << "\n";
 }
 
-//Napisz program, który konwertuje wprowadzon¹ kwotê w jednej walucie na inn¹, korzystaj¹c z okreœlonego kursu wymiany.
+/                6t 56 6y5t bv5t7m jk  /Napisz program, który konwertuje wprowadzon¹ kwotê w jednej walucie na inn¹, korzystaj¹c z okreœlonego kursu wymiany.
 void task12()
 {
 	int priceZl, convert;
@@ -175,7 +175,7 @@ void task12()
 	std::cout << "Przelicznik ze z³otówek na inn¹ walute wynosi: " << result << "\n"; 
 
 }
-
+ 
 //Napisz program, który wyœwietli informacje o tym czy liczba jest parzysta czy nieparzysta
 
 
@@ -187,7 +187,7 @@ void task12()
 
 
 
-
+1410 9
 
 
 	int main()
