@@ -412,6 +412,96 @@ void task15()
 }
 
 
+//Napisz program, który wyświetli największą liczbę ze zbioru jednoelementowego.
+void task16()
+{
+	int firstNumber;
+	std::cout << "Podaj liczbę\n";
+	std::cin >> firstNumber;
+
+	int max;
+
+	max = firstNumber;
+
+	std::cout << "Największa wartość to: " << max << "\n";
+}
+
+//Napisz program, który wyświetli największą liczbę ze zbioru dwuelementowego.
+void task17()
+{
+	int firstNumber, secondNumber;
+	std::cout << "Podaj liczbę\n";
+	std::cin >> firstNumber;
+	std::cout << "Podaj liczbę\n";
+	std::cin >> secondNumber;
+
+	int max;
+
+	if (secondNumber > firstNumber)
+		max = secondNumber;
+	else
+		max = firstNumber;
+
+	std::cout << "Największa wartość to: " << max << "\n";
+}
+
+//Napisz program, który wyświetli największą liczbę ze zbioru trójelementowego.
+void task18()
+{
+	int firstNumber, secondNumber, thirdNumber;
+	std::cout << "Podaj liczbę\n";
+	std::cin >> firstNumber;
+	std::cout << "Podaj liczbę\n";
+	std::cin >> secondNumber;
+	std::cout << "Podaj liczbę\n";
+	std::cin >> thirdNumber;
+
+	int max;
+
+	if (thirdNumber > secondNumber && thirdNumber > firstNumber)
+		max = thirdNumber;
+	else
+	{
+		if (secondNumber > firstNumber)
+			max = secondNumber;
+		else
+			max = firstNumber;
+	}
+
+	std::cout << "Największa wartość to: " << max << "\n";
+}
+
+//Napisz program, który wyświetli największą liczbę ze zbioru czteroelementowego.
+void task19()
+{
+	int firstNumber, secondNumber, thirdNumber, fourthNumber;
+	std::cout << "Podaj liczbę\n";
+	std::cin >> firstNumber;
+	std::cout << "Podaj liczbę\n";
+	std::cin >> secondNumber;
+	std::cout << "Podaj liczbę\n";
+	std::cin >> thirdNumber;
+	std::cout << "Podaj liczbę\n";
+	std::cin >> fourthNumber;
+
+	int max;
+
+	if (fourthNumber > thirdNumber
+		&& fourthNumber > secondNumber
+		&& fourthNumber > firstNumber)
+		max = fourthNumber;
+	else if (thirdNumber > secondNumber
+		&& thirdNumber > firstNumber)
+		max = thirdNumber;
+	else if (secondNumber > firstNumber)
+		max = secondNumber;
+	else
+		max = firstNumber;
+
+	std::cout << "Największa wartość to: " << max << "\n";
+}
+
+
 int main()
 {
 	setlocale(LC_CTYPE, "polish");
@@ -430,5 +520,9 @@ int main()
 	//task13();
 	//task14();
 	//task15();
+	//task16();
+	//task17();
+	//task18();
+	//task19();
 }
 
