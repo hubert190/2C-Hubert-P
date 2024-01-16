@@ -95,6 +95,30 @@ void task3()
     std::cout << "Min wynosi: " << min << "\n";
 }
 
+void task4()
+{
+    const long long UPPER_RANGE = 70;
+    //wersja 1
+
+    for (long long numberToCheck = 2; numberToCheck <= UPPER_RANGE ;numberToCheck ++)
+    {
+        bool isPrime = true;
+        for (long long i = 2; i <= numberToCheck/2; i++)
+        {
+            if (numberToCheck%i==0)
+            {
+                isPrime = false;
+                break;
+            }
+        }
+        if (isPrime)
+        {
+
+        }
+    }
+
+}
+
 int main()
 {
     setlocale(LC_CTYPE, "polish");
