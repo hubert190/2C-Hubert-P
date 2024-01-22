@@ -95,34 +95,78 @@ void task3()
     std::cout << "Min wynosi: " << min << "\n";
 }
 
+//Napisz program, który wyznaczy wszystkie liczby pierwsze od 2 do zadeklarowanego zakresu. Metoda sito Eratostenesa.
 void task4()
 {
     const long long UPPER_RANGE = 70;
+
     //wersja 1
 
-    for (long long numberToCheck = 2; numberToCheck <= UPPER_RANGE ;numberToCheck ++)
+    for (long long numberToCheck = 2; numberToCheck <= UPPER_RANGE; numberToCheck++)
     {
         bool isPrime = true;
-        for (long long i = 2; i <= numberToCheck/2; i++)
+        for (long long i = 2; i <= numberToCheck / 2; i++)
         {
-            if (numberToCheck%i==0)
+            if (numberToCheck % i == 0)
             {
                 isPrime = false;
                 break;
             }
         }
-        if (isPrime)
-        {
 
+        if (isPrime /*== true*/)
+            std::cout << numberToCheck << ", ";
+    }
+    std::cout << "Gotowe\n";
+
+    //wersja 2
+    bool sieveOfEratosthenes[UPPER_RANGE + 1];
+
+    for (unsigned long long i = 2; i <= UPPER_RANGE; i++)
+    {
+        sieveOfEratosthenes[i] = true;
+    }
+
+    for (unsigned long long number = 2; number <= UPPER_RANGE; number++)
+    {
+        if (sieveOfEratosthenes[number] /*== true*/)
+        {
+            for (long long numberToCrossOut = number + number; numberToCrossOut <= UPPER_RANGE; numberToCrossOut = numberToCrossOut + number)
+                sieveOfEratosthenes[numberToCrossOut] = false;
         }
     }
 
+    for (unsigned long long i = 2; i <= UPPER_RANGE; i++)
+    {
+        if (sieveOfEratosthenes[i] /*== true*/)
+            std::cout << i << ", ";
+    }
+    std::cout << "\n";
 }
+
+//Napisz program, który wczyta numer dnia tygodnia a póŸniej  wyœwitli nazwe dnia lub  komunikat b³êdu
+void task5()
+{
+    int numberOfWeek = 5;
+    std::cout << "Podaj numre dnia tygodnia\n";
+    std::cin >> numberOfWeek;
+
+    std::string dayNames[] = { "Poniedzia³ek","Wtorek","Œroda","Czwartek","Pi¹tek","Sobota","Niedziela" };
+    //dayNames[0]="Poniedzia³e";
+    //dayNames[1]="Wtorek";
+    //itd
+    
+    if (numberOfWeek >= 0 && numberOfWeek <= 6)
+        std::cout << "Ten dzieñ to\n" << dayNames[numberOfWeek] << "\n";
+    else
+        std::cout << "Niepoprawny dzieñ\n";
+}
+
 
 int main()
 {
     setlocale(LC_CTYPE, "polish");
-    task3();
+    task5();
 }
 
 
