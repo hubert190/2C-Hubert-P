@@ -147,8 +147,8 @@ void task4()
 //Napisz program, który wczyta numer dnia tygodnia a póŸniej  wyœwitli nazwe dnia lub  komunikat b³êdu
 void task5()
 {
-    int numberOfWeek = 5;
-    std::cout << "Podaj numre dnia tygodnia\n";
+    int numberOfWeek;
+    std::cout << "Podaj numer dnia tygodnia\n";
     std::cin >> numberOfWeek;
 
     std::string dayNames[] = { "Poniedzia³ek","Wtorek","Œroda","Czwartek","Pi¹tek","Sobota","Niedziela" };
@@ -156,17 +156,54 @@ void task5()
     //dayNames[1]="Wtorek";
     //itd
     
-    if (numberOfWeek >= 0 && numberOfWeek <= 6)
+    if (numberOfWeek >= 1 && numberOfWeek <= 7)
         std::cout << "Ten dzieñ to\n" << dayNames[numberOfWeek] << "\n";
     else
         std::cout << "Niepoprawny dzieñ\n";
 }
 
 
-int main()
+//Napisz program który posortuje tablice liczb sposobem przez wybór
+void task6()
 {
-    setlocale(LC_CTYPE, "polish");
-    task5();
+    const unsigned short LOWER_RANGE = 10;
+    const unsigned short UPPER_RANGE = 70;
+
+    const unsigned short ARRAY_SIZE = 10;
+    int numbers[ARRAY_SIZE];
+
+    srand(time(0));
+    std::cout << "wylosowane liczby:\n";
+    for (int i = 0; i < ARRAY_SIZE; i++)
+    {
+        numbers[i] = rand() % (UPPER_RANGE - LOWER_RANGE + 1) + LOWER_RANGE;
+        std::cout << numbers[i] << ", ";
+    }
+    std::cout << "\n";
+
+
+    for (int  i = 0; i < ARRAY_SIZE-1; i++)
+    {
+        int minIndex = i;
+        for (int j = i+1; j < ARRAY_SIZE; j++)
+        {
+            if (numbers[j] < numbers[minIndex])
+                minIndex = j;
+        }
+        int tmp = numbers[minIndex];
+        numbers[minIndex] = numbers[i];
+        numbers[i] = tmp;
+    }
+    std::cout << "Posortowane liczby:\n";
+    for (int i = 0; i < ARRAY_SIZE; i++)
+    {
+        std::cout << numbers[i] << ", ";
+    }std::cout << "\n";
 }
 
 
+int main()
+{
+    setlocale(LC_CTYPE, "polish");
+    task6();
+}
