@@ -202,8 +202,82 @@ void task6()
 }
 
 
+
+//Napisz program który posortuje tablice liczb sposobem przez przestawienia
+void task7()
+{
+    const unsigned short LOWER_RANGE = 10;
+    const unsigned short UPPER_RANGE = 70;
+
+    const unsigned short ARRAY_SIZE = 10;
+    int numbers[ARRAY_SIZE];
+
+    srand(time(0));
+    std::cout << "wylosowane liczby:\n";
+    for (int i = 0; i < ARRAY_SIZE; i++)
+    {
+        numbers[i] = rand() % (UPPER_RANGE - LOWER_RANGE + 1) + LOWER_RANGE;
+        std::cout << numbers[i] << ", ";
+    }
+    std::cout << "\n";
+
+
+    for (int i = 1; i < ARRAY_SIZE ; i++)
+    {
+        int pom = numbers[i];
+        int j;
+        for (j = i - 1; j >= 0 && numbers[j] > pom; j--)
+        {
+            numbers[j + 1] = numbers[j];
+        }
+        numbers[j + 1] = pom;
+    }    
+
+    std::cout << "Posortowane liczby:\n";
+    for (int i = 0; i < ARRAY_SIZE; i++)
+    {
+        std::cout << numbers[i] << ", ";
+    }std::cout << "\n";
+}
+
+
+//Napisz program który posortuje tablice liczb sposobem przez b¹belkowym
+void task8()
+{
+    const unsigned short LOWER_RANGE = 10;
+    const unsigned short UPPER_RANGE = 70;
+
+    const unsigned short ARRAY_SIZE = 10;
+    int numbers[ARRAY_SIZE];
+
+    srand(time(0));
+    std::cout << "wylosowane liczby:\n";
+    for (int i = 0; i < ARRAY_SIZE; i++)
+    {
+        numbers[i] = rand() % (UPPER_RANGE - LOWER_RANGE + 1) + LOWER_RANGE;
+        std::cout << numbers[i] << ", ";
+    }
+    std::cout << "\n";
+
+    for (int i = 0; i < ARRAY_SIZE - 1; i++)
+        for (int j = 0; j < ARRAY_SIZE - 1; j++)
+            if (numbers[j] > numbers[j + 1])
+            {
+                int tmp = numbers[i];
+                numbers[j] = numbers[j + 1];
+                numbers[j + 1] = tmp;
+            }
+    std::cout << "Posortowane liczby:\n";
+    for (int i = 0; i < ARRAY_SIZE; i++)
+    {
+        std::cout << numbers[i] << ", ";
+    }std::cout << "\n";
+}
+
+
+
 int main()
 {
     setlocale(LC_CTYPE, "polish");
-    task6();
+    task8();
 }
