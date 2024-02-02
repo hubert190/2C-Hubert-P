@@ -53,6 +53,13 @@ void task6_GetNumber(int& number)
 }
 
 
+int sumOfNumebrs(int fn, int sn)
+{
+    int s;
+    s = fn + sn;
+    return s;
+}
+
 
 
 int main()
@@ -87,5 +94,10 @@ int main()
     task6_GetNumber(numberFromUser);
     std::cout << "U¿ytkownik poda³ liczbe " << numberFromUser << "\n";
 
+    int firstNumber, secondNumber, sum;
+    firstNumber = 9;
+    secondNumber = 1;
+    sum = sumOfNumbers(firstNumber, secondNumber);
+    std::cout << sum << "\n";
 }
 
