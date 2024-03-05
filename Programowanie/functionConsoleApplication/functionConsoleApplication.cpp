@@ -61,6 +61,36 @@ int sumOfNumebrs(int fn, int sn)
 }
 
 
+//napisz funkcjê która obliczy wartoœæ silni i wyœwietli j¹
+long long calculateFactorial(long long n)
+{
+    long long factorial = 1;
+    for (int i = 2; i <= n; i++)
+    {
+        factorial = factorial * i;
+    }
+    return factorial;
+}
+
+long long calculateFactorialV2(long long n)
+{
+    if (n <= 1)
+        return 1;
+    else
+        return n * calculateFactorialV2(n - 1);
+
+}
+
+void task7()
+{
+    int number;
+    std::cout << "podaj liczbe:\n";
+        std::cin>>number;
+        long long factorial = calculateFactorialV2(number);
+        std::cout << "silnia wynosi" << factorial;
+
+}
+
 
 int main()
 {
@@ -90,7 +120,7 @@ int main()
      //task5(9) -B£¥D  przez parametr mo¿na przekazaæ tylko zmienn¹
      //task5(NUMBER) - B£¥D  przez parametr mo¿na przekazaæ tylko zmienn¹
    
-    int numberFromUser = 5;
+    /*int numberFromUser = 5;
     task6_GetNumber(numberFromUser);
     std::cout << "U¿ytkownik poda³ liczbe " << numberFromUser << "\n";
 
@@ -98,6 +128,8 @@ int main()
     firstNumber = 9;
     secondNumber = 1;
     sum = sumOfNumbers(firstNumber, secondNumber);
-    std::cout << sum << "\n";
+    std::cout << sum << "\n";*/
+
+    task7();
 }
 
