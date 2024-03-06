@@ -87,7 +87,7 @@ void task7()
     std::cout << "podaj liczbe:\n";
         std::cin>>number;
         long long factorial = calculateFactorialV2(number);
-        std::cout << "silnia wynosi" << factorial;
+        std::cout << "silnia wynosi\n" << factorial;
 
 }
 
