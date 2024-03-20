@@ -32,11 +32,6 @@ Wynik mnożenia: 15
 */
 
 
-
-
-
-
-
 void showMenu()
 {
 	system("cls");
@@ -191,7 +186,7 @@ void task2()
 	if (choice == 1)
 		std::cout << "Podaj temperature w stopniech Celciusza\n",
 		std::cin >> celcius;
-	
+
 	if (choice == 2)
 		std::cout << "Podaj temperature w stopniech Fahrenheit\n",
 		std::cin >> kelvin;
@@ -199,7 +194,7 @@ void task2()
 	if (choice == 3)
 		std::cout << "Podaj temperature w stopniech Kelvin\n",
 		std::cin >> fahrenheit;
-	
+
 
 	if (choice == 1)
 		fahrenheit = (celcius * 2) + 30,
@@ -248,42 +243,41 @@ Suma wyników: 33
 
 */
 
-void selection(int choice,int throws)
+void selection()
 {
-	std::cout << "Wybierz rodzaj kostki ";
-	std::cin >> choice;
-	if (choice==6||choice==10||choice==20)
-
-	std::cout << "Ile rzutów chcesz wykonać: ";
-	std::cin >> throws;
+	std::cout << "Wybierz rodzaj kostki(6 / 10 / 20) :\n";
 }
 
-void drawingNumbers(int choice)
+void drawingNumbers(int choice, int throws)
 {
-
-	const unsigned short LOWER_RANGE = 1;
-	const unsigned short UPPER_RANGE=choice ;
-
-	const unsigned short ARRAY_SIZE = 10;
-	int numbers[ARRAY_SIZE];
-
+	int numbers;
 	srand(time(0));
 	std::cout << "wylosowane liczby:\n";
-	for (int i = 0; i < ARRAY_SIZE; i++)
+	for (int i = 0; i < throws; i++)
 	{
-		numbers[i] = rand() % (UPPER_RANGE - LOWER_RANGE + 1) + LOWER_RANGE;
-		std::cout << numbers[i] << ", ";
+		numbers = rand() % (choice - 1 + 1) + 1;
+		std::cout << numbers << ", ";
 	}
 	std::cout << "\n";
+
 }
 
 void task3()
 {
-	int choice{}, throws{};
-	selection(choice, throws);
-	drawingNumbers(choice);
+	int choice, throws;
+	selection();
+	std::cin >> choice;
+	if (choice == 6 || choice == 10 || choice == 20)
+		true;
+	else
+		system("pause");
 
-	
+	std::cout << "Ile rzutów chcesz wykonać? \n";
+	std::cin >> throws;
+	drawingNumbers(choice, throws);
+
+
+
 
 }
 
@@ -373,7 +367,7 @@ void task4()
 int main()
 {
 	setlocale(LC_CTYPE, "polish");
-	task4();
+	task3();
 }
 
 
