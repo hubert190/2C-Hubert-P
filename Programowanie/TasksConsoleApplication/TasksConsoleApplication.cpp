@@ -158,31 +158,26 @@ void showMenuTemperature()
 }
 
 
-void calculate(int choice, int celcius, int kelvin, int fahrenheit)
+void calculateTemperature(int& choice, double &celcius, double &kelvin, double &fahrenheit)
 {
 	if (choice == 1)
 		fahrenheit = (celcius * 2) + 30,
-		kelvin = celcius + 273, 15;
+		kelvin = celcius + 273.15;
 	if (choice == 2)
-		celcius = kelvin - 273, 15,
+		celcius = kelvin - 273.15,
 		fahrenheit = (kelvin - 273.15) * 1.8000 + 32.00;
 	if (choice == 3)
-		celcius = fahrenheit - 273, 15,
+		celcius = fahrenheit - 273.15,
 		kelvin = (fahrenheit + 459.67) * 5 / 9;
 }
 
-
-
-void task2()
+void getTemperature(int &choice, double& celcius, double& kelvin, double& fahrenheit)
 {
+	choice = getNumber("Wybierz operację:\n");
 
-
-	showMenuTemperature();
-	int choice, celcius{}, kelvin{}, fahrenheit{};
-	std::cout << "Wybierz operację\n";
-	std::cin >> choice;
 	if (choice < 1 || choice >3)
 		std::cout << "Nie ma takiej opcji";
+
 	if (choice == 1)
 		std::cout << "Podaj temperature w stopniech Celciusza\n",
 		std::cin >> celcius;
@@ -194,17 +189,17 @@ void task2()
 	if (choice == 3)
 		std::cout << "Podaj temperature w stopniech Kelvin\n",
 		std::cin >> fahrenheit;
+}
 
 
-	if (choice == 1)
-		fahrenheit = (celcius * 2) + 30,
-		kelvin = celcius + 273, 15;
-	if (choice == 2)
-		celcius = kelvin - 273, 15,
-		fahrenheit = (kelvin - 273.15) * 1.8000 + 32.00;
-	if (choice == 3)
-		celcius = fahrenheit - 273, 15,
-		kelvin = (fahrenheit + 459.67) * 5 / 9;
+void task2()
+{
+	showMenuTemperature();
+	int choice;
+	double celcius, kelvin, fahrenheit;
+	getTemperature(choice, celcius, kelvin, fahrenheit);
+
+	calculateTemperature(choice,celcius,kelvin,fahrenheit);
 
 	std::cout << "Celciusze: " << celcius << "\n";
 	std::cout << "Kelviny " << kelvin << "\n";
@@ -367,7 +362,7 @@ void task4()
 int main()
 {
 	setlocale(LC_CTYPE, "polish");
-	task3();
+	task2();
 }
 
 
