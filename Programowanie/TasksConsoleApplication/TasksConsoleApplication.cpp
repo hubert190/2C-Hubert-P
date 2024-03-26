@@ -158,7 +158,7 @@ void showMenuTemperature()
 }
 
 
-void calculateTemperature(int& choice, double &celcius, double &kelvin, double &fahrenheit)
+void calculateTemperature(int& choice, double& celcius, double& kelvin, double& fahrenheit)
 {
 	if (choice == 1)
 		fahrenheit = (celcius * 2) + 30,
@@ -171,25 +171,28 @@ void calculateTemperature(int& choice, double &celcius, double &kelvin, double &
 		kelvin = (fahrenheit + 459.67) * 5 / 9;
 }
 
-void getTemperature(int &choice, double& celcius, double& kelvin, double& fahrenheit)
+double getDoubleNumber(std::string message)
+{
+	double valiu;
+	std::cout << message;
+	std::cin >> valiu;
+	return valiu;
+}
+
+void getTemperature(int& choice, double& celcius, double& kelvin, double& fahrenheit)
 {
 	choice = getNumber("Wybierz operację:\n");
 
 	if (choice < 1 || choice >3)
 		std::cout << "Nie ma takiej opcji";
-
 	if (choice == 1)
-		std::cout << "Podaj temperature w stopniech Celciusza\n",
-		std::cin >> celcius;
-
+		celcius = getDoubleNumber("Podaj temperature w stopniech Celciusza\n");
 	if (choice == 2)
-		std::cout << "Podaj temperature w stopniech Fahrenheit\n",
-		std::cin >> kelvin;
-
+		kelvin = getDoubleNumber("Podaj temperature w stopniech Fahrenheit\n");
 	if (choice == 3)
-		std::cout << "Podaj temperature w stopniech Kelvin\n",
-		std::cin >> fahrenheit;
+		fahrenheit = getDoubleNumber("Podaj temperature w stopniech Kelvin\n");
 }
+
 
 
 void task2()
@@ -199,7 +202,7 @@ void task2()
 	double celcius, kelvin, fahrenheit;
 	getTemperature(choice, celcius, kelvin, fahrenheit);
 
-	calculateTemperature(choice,celcius,kelvin,fahrenheit);
+	calculateTemperature(choice, celcius, kelvin, fahrenheit);
 
 	std::cout << "Celciusze: " << celcius << "\n";
 	std::cout << "Kelviny " << kelvin << "\n";
@@ -238,42 +241,42 @@ Suma wyników: 33
 
 */
 
-void selection()
+void selection(int& choice,int &throws)
 {
-	std::cout << "Wybierz rodzaj kostki(6 / 10 / 20) :\n";
-}
-
-void drawingNumbers(int choice, int throws)
-{
-	int numbers;
-	srand(time(0));
-	std::cout << "wylosowane liczby:\n";
-	for (int i = 0; i < throws; i++)
-	{
-		numbers = rand() % (choice - 1 + 1) + 1;
-		std::cout << numbers << ", ";
-	}
-	std::cout << "\n";
-
-}
-
-void task3()
-{
-	int choice, throws;
-	selection();
-	std::cin >> choice;
+	choice = getNumber("Wybierz rodzaj kostki(6 / 10 / 20) :\n");
 	if (choice == 6 || choice == 10 || choice == 20)
 		true;
 	else
 		system("pause");
 
-	std::cout << "Ile rzutów chcesz wykonać? \n";
-	std::cin >> throws;
+	throws = getNumber("Podaj ilość rzutów:\n");
+}
+
+void drawingNumbers(int choice, int throws)
+{
+	int numbers;
+	int sum;
+	int number=0;
+	srand(time(0));
+	std::cout << "wylosowane liczby:\n";
+	for (int i = 0; i < throws; i++)
+	{
+		number ++;
+		numbers = rand() % (choice - 1 + 1) + 1;
+		std::cout << number<<". Rzut "<<number<<": "<<numbers<<"\n";
+		sum = numbers + sum;
+	}
+	std::cout << "Suma: " << sum;
+
+}
+
+
+
+void task3()
+{
+	int choice, throws;
+	selection(choice,throws);
 	drawingNumbers(choice, throws);
-
-
-
-
 }
 
 
@@ -319,31 +322,23 @@ void showMenuConvert()
 	std::cout << "1. Metry \n ";
 	std::cout << "2. Centymetry \n";
 	std::cout << "3. Cale \n";
-
 }
 
-
-
-
-void task4()
+void choiceConvert(int& choice, double& cale, double& centymeters, double& meters)
 {
-	showMenuConvert();
-	double choice, cale{}, centymeters{}, meters{};
-	std::cout << "Wybór ";
-	std::cin >> choice;
+	choice = getNumber("Wybór: \n");
 	if (choice > 3 || choice < 1)
 		std::cout << "nie ma tekiego wyboru\n";
 	if (choice == 1)
-		std::cout << "Podaj miare w metrach\n",
-		std::cin >> meters;
+		meters = getDoubleNumber("Podaj miare w metrach\n");
 	if (choice == 2)
-		std::cout << "Podaj miare w centymetrach\n",
-		std::cin >> centymeters;
-
+		centymeters = getDoubleNumber("Podaj miare w centymetrach\n");
 	if (choice == 3)
-		std::cout << "Podaj miare w calach\n",
-		std::cin >> cale;
+		cale = getDoubleNumber("Podaj miare w calach\n");
+}
 
+void convert(int& choice, double& cale, double& centymeters, double& meters)
+{
 	if (choice == 1)
 		centymeters = meters * 100,
 		cale = meters * 39.370;
@@ -353,16 +348,31 @@ void task4()
 	if (choice == 3)
 		meters = cale * 0.0254,
 		centymeters = meters * 100;
+}
 
+
+void results(int& choice, double& cale, double& centymeters, double& meters)
+{
 	std::cout << "Metry: " << meters << "\n";
 	std::cout << "Centymetry: " << centymeters << "\n";
 	std::cout << "Cale:  " << cale << "\n";
 }
 
+
+void task4()
+{
+	int choice;
+	showMenuConvert();
+	double cale, centymeters, meters;
+	choiceConvert(choice, cale, centymeters, meters);
+	convert(choice, cale, centymeters, meters);
+	results(choice, cale, centymeters, meters);
+}
+
 int main()
 {
 	setlocale(LC_CTYPE, "polish");
-	task2();
+	task3();
 }
 
 
