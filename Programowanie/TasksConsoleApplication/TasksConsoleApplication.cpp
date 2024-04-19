@@ -157,7 +157,6 @@ void showMenuTemperature()
 
 }
 
-
 void calculateTemperature(int& choice, double& celcius, double& kelvin, double& fahrenheit)
 {
 	if (choice == 1)
@@ -192,8 +191,6 @@ void getTemperature(int& choice, double& celcius, double& kelvin, double& fahren
 	if (choice == 3)
 		fahrenheit = getDoubleNumber("Podaj temperature w stopniech Kelvin\n");
 }
-
-
 
 void task2()
 {
@@ -269,8 +266,6 @@ void drawingNumbers(int choice, int throws)
 	std::cout << "Suma: " << sum;
 
 }
-
-
 
 void task3()
 {
