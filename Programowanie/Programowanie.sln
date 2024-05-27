@@ -43,6 +43,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SnakeConsoleApplication", "
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "TaskConsoleApplication", "TaskConsoleApplication\TaskConsoleApplication.vcxproj", "{09CF8C9C-D132-4143-B3D9-494B00080AAA}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "DrawasquarConsoleApplication", "DrawasquarConsoleApplication\DrawasquarConsoleApplication.vcxproj", "{5F3B3A41-DB3E-426C-91C0-79E0B5FFD28C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -163,6 +165,14 @@ Global
 		{09CF8C9C-D132-4143-B3D9-494B00080AAA}.Release|x64.Build.0 = Release|x64
 		{09CF8C9C-D132-4143-B3D9-494B00080AAA}.Release|x86.ActiveCfg = Release|Win32
 		{09CF8C9C-D132-4143-B3D9-494B00080AAA}.Release|x86.Build.0 = Release|Win32
+		{5F3B3A41-DB3E-426C-91C0-79E0B5FFD28C}.Debug|x64.ActiveCfg = Debug|x64
+		{5F3B3A41-DB3E-426C-91C0-79E0B5FFD28C}.Debug|x64.Build.0 = Debug|x64
+		{5F3B3A41-DB3E-426C-91C0-79E0B5FFD28C}.Debug|x86.ActiveCfg = Debug|Win32
+		{5F3B3A41-DB3E-426C-91C0-79E0B5FFD28C}.Debug|x86.Build.0 = Debug|Win32
+		{5F3B3A41-DB3E-426C-91C0-79E0B5FFD28C}.Release|x64.ActiveCfg = Release|x64
+		{5F3B3A41-DB3E-426C-91C0-79E0B5FFD28C}.Release|x64.Build.0 = Release|x64
+		{5F3B3A41-DB3E-426C-91C0-79E0B5FFD28C}.Release|x86.ActiveCfg = Release|Win32
+		{5F3B3A41-DB3E-426C-91C0-79E0B5FFD28C}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -182,6 +192,7 @@ Global
 		{1770C79E-2EB7-44EE-B707-171991629E0A} = {B77D6FA5-D0E8-4091-A223-C33700CB8F1A}
 		{6D6BF69D-0F07-4E37-82F6-170F2A91A53F} = {B77D6FA5-D0E8-4091-A223-C33700CB8F1A}
 		{09CF8C9C-D132-4143-B3D9-494B00080AAA} = {B77D6FA5-D0E8-4091-A223-C33700CB8F1A}
+		{5F3B3A41-DB3E-426C-91C0-79E0B5FFD28C} = {B77D6FA5-D0E8-4091-A223-C33700CB8F1A}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {BFFC169A-C1FA-42E0-95B0-A293D1F95573}
