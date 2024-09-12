@@ -9,4 +9,7 @@ void task1()
 
 	std::cout << "Podaj y\n";
 	std::cin >> y;
+
+	double distance = sqrt(x * x + y * y);
+	std::cout << "Odleg³oœæ to " << distance << "\n";
 }
