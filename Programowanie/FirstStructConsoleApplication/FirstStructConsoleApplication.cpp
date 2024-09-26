@@ -3,5 +3,6 @@
 
 int main()
 {
-    task2();
+    setlocale(LC_CTYPE, "polish");
+    task4();
 }
