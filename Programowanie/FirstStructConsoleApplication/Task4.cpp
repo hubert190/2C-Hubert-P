@@ -27,6 +27,8 @@ void widthdrawalFromAccount(bankAccount& account, double amount)
 		account.balance = account.balance - amount;
 }
 
+bool widthdrawalFromAccounts (bankAccount&)
+
 void task4()
 {
 	bankAccount firstAccount;
