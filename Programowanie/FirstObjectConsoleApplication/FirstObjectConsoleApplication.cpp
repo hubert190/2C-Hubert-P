@@ -1,3 +1,10 @@
+// FirstObjectConsoleApplication.cpp : This file contains the 'main' function. Program execution begins and ends there.
+//
+
+#include <iostream>
+
+
+
 #include <iostream>
 
 struct bankAccount
@@ -29,8 +36,8 @@ void widthrawalFromAccount(bankAccount& account, double amount)
 
 bool widthdrawalFromAccounts(bankAccount& account, double amount)
 {
-	if(amount>=0
-		&& account.balance>=amount)
+	if (amount >= 0
+		&& account.balance >= amount)
 	{
 		account.balance = account.balance - amount;
 		return true;
@@ -38,14 +45,13 @@ bool widthdrawalFromAccounts(bankAccount& account, double amount)
 	return false;
 }
 
-void transferBetweenAccounts(bankAccount &sourceAccount, bankAccount &targetAccount, double amount)
+void transferBetweenAccounts(bankAccount& sourceAccount, bankAccount& targetAccount, double amount)
 {
 	if (widthdrawalFromAccounts(sourceAccount, amount))
 		depositToAccount(targetAccount, amount);
 
 }
-
-void task4()
+int main()
 {
 	bankAccount firstAccount;
 	firstAccount.balance = 7200;
@@ -61,3 +67,4 @@ void task4()
 	depositToAccount(secondAccount, 100);
 	accountInformation(secondAccount);
 }
+
