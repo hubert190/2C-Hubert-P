@@ -21,35 +21,29 @@ void accountInformation(BankAccount& account)
 	std::cout << "Saldo: " << account.balance << " " << account.currency << '\n';
 }
 
-void depositToAccount(BankAccount& account, double amount)
+void DepositToAccount(double amount)
 {
 	if (amount >= 0)
-		account.balance = account.balance + amount;
+		balance = balance + amount;
 }
 
-void widthrawalFromAccount(BankAccount& account, double amount)
+bool WidthdrawalFromAccounts(double amount)
 {
 	if (amount >= 0
-		&& account.balance >= amount)
-		account.balance = account.balance - amount;
-}
-
-
-bool widthdrawalFromAccounts(BankAccount& account, double amount)
-{
-	if (amount >= 0
-		&& account.balance >= amount)
+		&& balance >= amount)
 	{
-		account.balance = account.balance - amount;
+		balance = balance - amount;
 		return true;
 	}
 	return false;
 }
 
+
+
 void transferBetweenAccounts(BankAccount& sourceAccount, BankAccount& targetAccount, double amount)
 {
-	if (widthdrawalFromAccounts(sourceAccount, amount))
-		depositToAccount(targetAccount, amount);
+	if (WidthdrawalFromAccounts(sourceAccount,  amount))
+		targetAccount.DepositToAccount(amount);
 
 }
 int main()
@@ -67,7 +61,7 @@ int main()
 	secondAccount.currency = "z³";
 	secondAccount.AccountInformation();
 
-	depositToAccount(secondAccount, 100);
+	DepositToAccount(100);
 	firstAccount.AccountInformation();
 
 	accountInformation(secondAccount);
