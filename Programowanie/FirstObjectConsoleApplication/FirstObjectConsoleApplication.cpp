@@ -1,70 +1,43 @@
-#include <iostream>
+ï»¿// FirstObjectConsoleApplication.cpp 
 
-class BankAccount
-{
-	public:
-	double balance;
-	std::string owner;
-	std::string currency;
-	void AccountInformation()
-	{
-		std::cout << "Informacje o koncie bankowym \n";
-		std::cout << "W³aœcicel: " << owner << "\n";
-		std::cout << "Saldo: " << balance << " " << currency << '\n';
-	}
-};
 
-void accountInformation(BankAccount& account)
+
+
+void transferBetweenAccounts(BankAccount& sourceAccount, BankAccount& targetAcccount, double amount)
 {
-	std::cout << "Informacje o koncie bankowym \n";
-	std::cout << "W³aœcicel: " << account.owner << "\n";
-	std::cout << "Saldo: " << account.balance << " " << account.currency << '\n';
+	if (sourceAccount.WidthdrawalFromAccount(amount))
+		targetAcccount.DepositToAccount(amount);
+
 }
 
-void DepositToAccount(double amount)
-{
-	if (amount >= 0)
-		balance = balance + amount;
-}
-
-bool WidthdrawalFromAccounts(double amount)
-{
-	if (amount >= 0
-		&& balance >= amount)
-	{
-		balance = balance - amount;
-		return true;
-	}
-	return false;
-}
-
-
-
-void transferBetweenAccounts(BankAccount& sourceAccount, BankAccount& targetAccount, double amount)
-{
-	if (WidthdrawalFromAccounts(sourceAccount,  amount))
-		targetAccount.DepositToAccount(amount);
-
-}
 int main()
 {
 	BankAccount firstAccount;
 	firstAccount.balance = 7200;
 	firstAccount.owner = "Jan Kowalski";
-	firstAccount.currency = "z³";
+	firstAccount.currency = "zÂ³";
 
 	firstAccount.AccountInformation();
+
+	//accountInformation(firstAccount);
 
 	BankAccount secondAccount;
 	secondAccount.balance = 3200;
 	secondAccount.owner = "Ewa Nowak";
-	secondAccount.currency = "z³";
+	secondAccount.currency = "zÂ³";
+
 	secondAccount.AccountInformation();
 
-	DepositToAccount(100);
+	firstAccount.DepositToAccount(100);
 	firstAccount.AccountInformation();
 
-	accountInformation(secondAccount);
+	firstAccount.WidthdrawalFromAccount(200);
 	firstAccount.AccountInformation();
+	secondAccount.AccountInformation();
+
+	transferBetweenAccounts(firstAccount, secondAccount, 8100);
+
+	firstAccount.AccountInformation();
+	secondAccount.AccountInformation();
+
 }
-
