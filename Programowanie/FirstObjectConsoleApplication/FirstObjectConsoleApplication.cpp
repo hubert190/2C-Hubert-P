@@ -1,14 +1,10 @@
 ﻿// FirstObjectConsoleApplication.cpp 
 
+#include <iostream>
+#include "BankAccount.h"
 
 
 
-void transferBetweenAccounts(BankAccount& sourceAccount, BankAccount& targetAcccount, double amount)
-{
-	if (sourceAccount.WidthdrawalFromAccount(amount))
-		targetAcccount.DepositToAccount(amount);
-
-}
 
 int main()
 {
@@ -35,7 +31,7 @@ int main()
 	firstAccount.AccountInformation();
 	secondAccount.AccountInformation();
 
-	transferBetweenAccounts(firstAccount, secondAccount, 8100);
+	firstAccount.TransferBetweenAccounts(secondAccount, 8100);
 
 	firstAccount.AccountInformation();
 	secondAccount.AccountInformation();

@@ -5,14 +5,15 @@ class BankAccount
 {
 public:
 	double balance;
-	std::string owner;
+	st d::string owner;
 	std::string currency;
 
 	void AccountInformation();
 
-	void DepositToAccount(double amount)
-	
+	void DepositToAccount(double amount);
 
-	bool WidthdrawalFromAccount(double amount)
-	
+
+	bool WidthdrawalFromAccount(double amount);
+
+	void TransferBetweenAccounts(BankAccount& targetAccount , );
 };

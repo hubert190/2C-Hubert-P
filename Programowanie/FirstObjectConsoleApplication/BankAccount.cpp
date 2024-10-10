@@ -1,5 +1,4 @@
-﻿#include <iostream>
-#include "BankAccount.h"
+﻿
 
 void BankAccount.h::AccountInformation()
 {
@@ -23,3 +22,10 @@ if (amount >= 0
 
 return false;
 	
+
+void TransferBetweenAccounts(BankAccount& targetAcccount,  double amount)
+{
+	if (WidthdrawalFromAccount(amount))
+		targetAcccount.DepositToAccount(amount);
+
+}
