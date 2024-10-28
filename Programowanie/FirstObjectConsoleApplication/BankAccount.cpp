@@ -1,29 +1,32 @@
-﻿
+﻿#include <iostream>
+#include "BankAccount.h"
 
-void BankAccount.h::AccountInformation()
+void BankAccount::AccountInformation()
 {
 	std::cout << "Informacja o koncie bankowym\n";
 	std::cout << "W³aœciciel: " << owner << "\n";
 	std::cout << "Saldo: " << balance << " " << currency << "\n";
 }
 
-void BankAccount.h::DepositToAccount(double amount)
+void BankAccount::DepositToAccount(double amount)
 {
 	if (amount >= 0)
 		balance = balance + amount;
 }
 
-if (amount >= 0
-	&& balance >= amount)
+bool BankAccount::WidthdrawalFromAccount(double amount)
 {
-	balance = balance - amount;
-	return true;
+	if (amount >= 0
+		&& balance >= amount)
+	{
+		balance = balance - amount;
+		return true;
+	}
+
+	return false;
 }
 
-return false;
-	
-
-void TransferBetweenAccounts(BankAccount& targetAcccount,  double amount)
+void BankAccount::TransferBetweenAccounts(BankAccount& targetAcccount, double amount)
 {
 	if (WidthdrawalFromAccount(amount))
 		targetAcccount.DepositToAccount(amount);

@@ -1,5 +1,5 @@
 #pragma once
-#include <iostream>
+
 
 class BankAccount
 {
@@ -11,9 +11,6 @@ public:
 	void AccountInformation();
 
 	void DepositToAccount(double amount);
-
-
 	bool WidthdrawalFromAccount(double amount);
-
-	void TransferBetweenAccounts(BankAccount& targetAccount , );
+	void TransferBetweenAccounts(BankAccount& targetAcccount, double amount);
 };
