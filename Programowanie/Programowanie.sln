@@ -61,6 +61,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ReadAndWriteInFilesConsoleA
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "StringConsoleApplication", "StringConsoleApplication\StringConsoleApplication.vcxproj", "{412640B6-BD12-4A38-B79F-3EABB9D53588}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "InheritanceConsoleApplication", "InheritanceConsoleApplication\InheritanceConsoleApplication.vcxproj", "{B76DD9AC-3F21-47DA-8B6A-15BC0D3A545E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -221,6 +223,14 @@ Global
 		{412640B6-BD12-4A38-B79F-3EABB9D53588}.Release|x64.Build.0 = Release|x64
 		{412640B6-BD12-4A38-B79F-3EABB9D53588}.Release|x86.ActiveCfg = Release|Win32
 		{412640B6-BD12-4A38-B79F-3EABB9D53588}.Release|x86.Build.0 = Release|Win32
+		{B76DD9AC-3F21-47DA-8B6A-15BC0D3A545E}.Debug|x64.ActiveCfg = Debug|x64
+		{B76DD9AC-3F21-47DA-8B6A-15BC0D3A545E}.Debug|x64.Build.0 = Debug|x64
+		{B76DD9AC-3F21-47DA-8B6A-15BC0D3A545E}.Debug|x86.ActiveCfg = Debug|Win32
+		{B76DD9AC-3F21-47DA-8B6A-15BC0D3A545E}.Debug|x86.Build.0 = Debug|Win32
+		{B76DD9AC-3F21-47DA-8B6A-15BC0D3A545E}.Release|x64.ActiveCfg = Release|x64
+		{B76DD9AC-3F21-47DA-8B6A-15BC0D3A545E}.Release|x64.Build.0 = Release|x64
+		{B76DD9AC-3F21-47DA-8B6A-15BC0D3A545E}.Release|x86.ActiveCfg = Release|Win32
+		{B76DD9AC-3F21-47DA-8B6A-15BC0D3A545E}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -253,6 +263,7 @@ Global
 		{47760845-093F-4D63-8B36-E2C182703A02} = {A9241C67-565D-4BE9-B6CD-9E6341188ECB}
 		{D6F4BD06-3B4F-4B9E-9ADC-F4CB44D685C4} = {A9241C67-565D-4BE9-B6CD-9E6341188ECB}
 		{412640B6-BD12-4A38-B79F-3EABB9D53588} = {A9241C67-565D-4BE9-B6CD-9E6341188ECB}
+		{B76DD9AC-3F21-47DA-8B6A-15BC0D3A545E} = {A9241C67-565D-4BE9-B6CD-9E6341188ECB}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {BFFC169A-C1FA-42E0-95B0-A293D1F95573}
