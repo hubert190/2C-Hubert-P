@@ -2,16 +2,16 @@
 
 class SavingBankAccount : public BankAccount
 {
-public:
+protected:
 	double interestRate;
-	
-	public
-		SavingBankAccount()
-	{
-		interestRate = 0.1;
 
-		void Calcul
-			balance = balance + balance + interestRate; 
-		}
-	}
-};d
+public:
+
+	SavingBankAccount();
+	SavingBankAccount(double b, std::string o, std::string c, double ir);
+
+
+	void CalculateInterestRate();
+
+	void AccountInformation();
+};
