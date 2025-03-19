@@ -15,7 +15,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Matura2022maj.cpp.cpp">
+    <ClCompile Include="Matura2022maj.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

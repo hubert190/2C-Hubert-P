@@ -127,7 +127,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Matura2022maj.cpp.cpp" />
+    <ClCompile Include="Matura2022maj.cpp" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="liczby.txt" />
