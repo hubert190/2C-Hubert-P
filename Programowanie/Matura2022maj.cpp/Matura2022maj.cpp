@@ -40,18 +40,35 @@ int main()
 	}
 	std::cout << "\n";
 
+
+	//Podaj, ile jest w pliku liczby.txt takich liczb, których cyfry pierwsza i ostatnia są takie
+	//same.Zapisz tę z nich, która występuje w pliku liczby.txt jako pierwsza.
+	//W pliku z danymi jest co najmniej jedna taka liczba.
 	std::cout << "Zadanie 4.1 \n";
 	int count = 0;
+	int first_matching_number = 0;
 	for (int num : numbers)
 	{
 		int firstDigit;
 		int lastDigit = num % 10;
+		int tmpNum = num;
+
+		do
+		{
+			firstDigit = tmpNum % 10;
+			tmpNum = tmpNum / 10;
+		} while (tmpNum != 0);
 
 		if (firstDigit == lastDigit)
 		{
 			count++;
 		}
+		 
+		
 	}
 
+		std::cout << "Ilość: " << count << "\n";
+		std::cout << "Pierwsza liczba: " << first_matching_number << "\n";
+	
 }
 
