@@ -1,10 +1,10 @@
 ﻿#include <iostream>
 #include <fstream>
 #include <vector>
+#include <set>
 
 int main()
 {
-	std::ifstream file("przyklad.txt");
 	/*
 	int numbers[200];
 
@@ -21,54 +21,59 @@ int main()
 	std::cout << "\n";
 	*/
 
-	std::vector<int> numbers;
+	std::ifstream file("przyklad.txt");
 
 	int num;
-	while (file >> num)
-		numbers.push_back(num);
-	/*
-	for (int i = 0; i < numbers.size(); i++)
-	{
-		std::cout << numbers[i] << ", ";
-	}
-	*/
-	
-	std::cout << "Wyswietlone liczby: \n";
-	for (int num : numbers )
-	{
-		std::cout << num << ", ";
-	}
-	std::cout << "\n";
+	while (file >> num) {
+		int divisor = 2;
+		std::vector <int> uniqueFactors;
+		int n = num;
+		int factorsCount = 0;
 
-
-	//Podaj, ile jest w pliku liczby.txt takich liczb, których cyfry pierwsza i ostatnia są takie
-	//same.Zapisz tę z nich, która występuje w pliku liczby.txt jako pierwsza.
-	//W pliku z danymi jest co najmniej jedna taka liczba.
-	std::cout << "Zadanie 4.1 \n";
-	int count = 0;
-	int first_matching_number = 0;
-	for (int num : numbers)
-	{
-		int firstDigit;
-		int lastDigit = num % 10;
-		int tmpNum = num;
-
-		do
+		/*
+		for (int i = 0; i < numbers.size(); i++)
 		{
-			firstDigit = tmpNum % 10;
-			tmpNum = tmpNum / 10;
-		} while (tmpNum != 0);
-
-		if (firstDigit == lastDigit)
-		{
-			count++;
+			std::cout << numbers[i] << ", ";
 		}
-		 
-		
+		*/
+
+		//Zdanie 4.2
+
+			
+		std::cout << "Zadanie 4.2 \n";
+		int maxFactorsCount = 0, maxUniqueFactorsCount = 0;
+		int numberWithMostFactors = 0, numberWithMostUniqueFactors = 0;
+
+
+
+		while (n > 1) {
+			bool isNewFactor = true;
+			while (n % divisor == 0) {
+				factorsCount++;
+				n /= divisor;
+
+				for (int i = 0; i < uniqueFactors.size(); i++) {
+					if (uniqueFactors[1] == divisor) {
+						isNewFactor = false;
+						break;
+					}
+				}
+				divisor++;
+			}
+			if (factorsCount > maxFactorsCount) {
+				maxFactorsCount = factorsCount;
+				numberWithMostFactors = n;
+			}
+		}
+		if (uniqueFactors.size() > maxUniqueFactorsCount) {
+			maxUniqueFactorsCount = uniqueFactors.size();
+			numberWithMostUniqueFactors = n;
+		}
+
+		std::cout << numberWithMostFactors << " " << maxFactorsCount << " " << numberWithMostUniqueFactors << " " << maxUniqueFactorsCount;
+	}
 	}
 
-		std::cout << "Ilość: " << count << "\n";
-		std::cout << "Pierwsza liczba: " << first_matching_number << "\n";
-	
-}
+
+
 
