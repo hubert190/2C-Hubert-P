@@ -77,3 +77,85 @@ int main()
 
 
 
+
+#include <iostream>
+#include <fstream>
+
+void task3_2() {
+
+	std::ifstream file("skrot_przyklad.txt");
+
+	std::cout << "Zadanie 3.2" << '\n';
+
+	int number;
+	int count = 0;
+	int maxNumber = 0;
+
+	while (file >> number) {
+		int temp = number;
+		bool oddDigit = false;
+
+		while (temp > 0) {
+			int digit = temp % 10;
+			if (digit % 2 == 1) {
+				oddDigit = true;
+				break;
+			}
+			temp /= 10;
+		}
+
+		if (!oddDigit) {
+			count++;
+
+
+			if (number > maxNumber) {
+				maxNumber = number;
+			}
+		}
+	}
+
+	std::cout << count << "\n";
+	std::cout << maxNumber << "\n";
+}
+
+void task3_3() {
+	std::ifstream file("skrot2_przyklad.txt");
+
+	std::cout << "Zadanie 3.3" << '\n';
+
+	int numbers;
+
+	while (file >> numbers) {
+		int temp = numbers;
+		int oddShortcut = 0;
+		int multiplier = 1;
+
+		while (temp > 0) {
+			int digit = temp % 10;
+			if (digit % 2 == 1) {
+				oddShortcut = digit * multiplier + oddShortcut;
+				multiplier *= 10;
+			}
+			temp /= 10;
+		}
+
+		int num1 = numbers, num2 = oddShortcut;
+		while (oddShortcut != 0) {
+			int temp = num2;
+			num2 = num1 % num2;
+			num1 = temp;
+		}
+
+		if (num1 == 7) {
+			std::cout << numbers << '\n';
+		}
+	}
+}
+
+int main() {
+	task3_2();
+	task3_3();
+
+}
+
+
