@@ -1,0 +1,5 @@
+Jednowymiarowe - Przechowywanie wyników np. uczniów z testu, Przechowywanie liczb do sortowania, Zarządzanie np. kolejką klientów 
+
+Wielowymiarowe - Tabela wyników studentów z różnych przedmiotów, Plansza do gry w kółko i krzyżyk
+
+Asocjacyjne - Przechowywanie definicji słów, Zliczanie częstotliwości słów w tekście,  Katalog produktów w sklepie z cenami

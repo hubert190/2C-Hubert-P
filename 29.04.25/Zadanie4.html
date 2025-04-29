@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Tablica 5x5 z liczbami od 10</h2>
+    <script>
+        let tablica = [];
+        let liczba = 10;
+
+        for(let i = 0; i < 5 ; i++) {
+            tablica[i] = [];
+            for( let j = 0; j<5 ; j++){
+                tablica[i][j] = liczba;
+                liczba++;
+            }
+        }
+
+        for(let i = 0; i < 5 ; i++) {
+            for( let j = 0; j<5 ; j++) { 
+        document.write(tablica[i][j] + " "); }
+        document.write("<br>"); }
+    </script>
+</body>
+</html>

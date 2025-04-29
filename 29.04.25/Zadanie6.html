@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Tablica liczb od 100, suma i ich średnia</h2>
+
+    <script>
+        let tablica = [];
+        let suma = 0;
+
+        for ( let i = 0; i < 10 ; i++){
+            tablica[i] = 100 + i;
+            suma +=tablica[i];
+        }
+
+        let srednia = suma / tablica.length;
+
+        document.write("Liczby w tablicy: " + tablica.join(", " + "<br>"));
+        document.write("Suma: " + suma + "<br>");
+        document.write("Średnia: " + srednia + "<br>");
+        
+    </script>
+</body>
+</html>
