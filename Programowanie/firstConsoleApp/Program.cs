@@ -33,3 +33,34 @@ Console.WriteLine($"przed {firstNumber}");
 ParametrTest_v1(firstNumber);
 Console.WriteLine($"po {firstNumber}");
 //Parametr_v1(99);
+
+//przekazywanie przez referencje 
+
+void ParametrTest_v2(ref int p)
+{
+    Console.WriteLine($"Parametr: {p}");
+    p++;
+    Console.WriteLine($"Parametr: {p}");
+}
+
+firstNumber = 15;
+Console.WriteLine($"przed {firstNumber}");
+ParametrTest_v2(ref firstNumber);
+Console.WriteLine($"po {firstNumber}");
+//ParametrTest_v2(ref 99) //BLAD
+
+void ParametrTest_v3(out int p) { 
+//Console.WriteLine($"Parametr: {p}");
+p=19;
+Console.WriteLine($"Parametr: {p}");}
+
+int thirdNumber=12;
+ParametrTest_v3(out thirdNumber);
+Console.WriteLine($"thirdNumber to {thirdNumber}");
+
+string firstStrNumber = "15";
+int firstConvertedNumber = int.Parse( firstStrNumber );
+Console.WriteLine($"po konwersji {firstConvertedNumber}");
+
+if (int.TryParse(firstStrNumber, out int secondConvertNumber)) ;
+Console.WriteLine($"Udało sie skonwertować {secondConvertNumber}");
