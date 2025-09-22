@@ -40,3 +40,22 @@ PointClass secondPointClass = firstPointClass;
 secondPointClass.x = 17;
 Console.WriteLine($"firstPointClass ({firstPointClass.x} , {firstPointClass.y})");
 Console.WriteLine($"firstPointClass ({secondPointClass.x} , {secondPointClass.y})");
+
+void ParametrTestClass_v1(PointClass pc)
+{
+    Console.WriteLine($"firstPointClass ({pc.x} , {pc.y})");
+    pc.x = 79;
+    Console.WriteLine($"firstPointClass ({pc.x} , {pc.y})");
+}
+ParametrTestClass_v1(firstPointClass);
+Console.WriteLine($"firstPointClass ({firstPointClass.x} , {firstPointClass.y})");
+
+void ParametrTestClass_v2(PointClass pc)
+{
+    Console.WriteLine($"firstPointClass ({pc.x} , {pc.y})");
+    pc.x = 79;
+    Console.WriteLine($"firstPointClass ({pc.x} , {pc.y})");
+}
+
+ParametrTestClass_v2(firstPointClass);
+Console.WriteLine($"firstPointClass ({firstPointClass.x} , {firstPointClass.y})");
