@@ -1,2 +1,4 @@
-﻿// See https://aka.ms/new-console-template for more information
-Console.WriteLine("Hello, World!");
+﻿using ParticalTasksConsoleApp.Styczen2023__;
+
+Task1 task1 = new Task1();
+task1.NWD();
