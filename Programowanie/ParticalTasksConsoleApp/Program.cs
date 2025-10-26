@@ -1,4 +1,12 @@
-﻿using ParticalTasksConsoleApp.Styczen2023__;
+using System;
 
-Task1 task1 = new Task1();
-task1.NWD();
+namespace ParticalTasksConsoleApp.Styczen2023_1
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            Task1.Task_1();
+        }
+    }
+}
