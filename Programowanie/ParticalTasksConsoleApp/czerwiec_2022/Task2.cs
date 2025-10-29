@@ -34,25 +34,6 @@ namespace ParcticalTasksConsoleApp.Task2022_06
 
 
 
-        class Program
-        {
-            static void Main(string[] args)
-            {
-              
-                Osoba osoba1 = new Osoba();
-                Osoba osoba2 = new Osoba(1, "Alicja"); 
-                Osoba osoba3 = new Osoba(osoba2); 
-
-             
-                osoba1.Przywitanie("Bartek");
-                osoba2.Przywitanie("Kasia");
-                osoba3.Przywitanie("Marek");
-
-                Console.WriteLine("Test zakończony.");
-
-
-
-            }
-        }
+        
     }
 }
