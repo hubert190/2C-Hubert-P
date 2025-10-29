@@ -5,7 +5,7 @@ namespace ParcticalTasksConsoleApp.Task2022_06
 {
     public class Osoba
     {
-        private static long numberOfCreatedClass = 0;
+        static long numberOfCreatedClass = 0;
         private int id;
         private string imie;
         public Osoba(int id, string imie)
@@ -31,9 +31,5 @@ namespace ParcticalTasksConsoleApp.Task2022_06
         {
             Console.WriteLine($"Cześć {imieWitajacego}, mam na imię {imie} ");
         }
-
-
-
-        
     }
 }

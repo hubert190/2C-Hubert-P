@@ -10,6 +10,14 @@ namespace Task4
             Console.WriteLine(tresc);
         }
     }
+    /*
+     Nazwa: Komunikat
+     Opis: Wyświetla w konsoli przekazywany komunikat tekstowy
+     parametry: tresc
+     zwracany typ i opis: brak
+    */
+
+
 
     class Pralka : Urzadzenie
     {
@@ -31,6 +39,15 @@ namespace Task4
             return numerProgramu;
         }
     }
+
+    /*
+    Nazwa: UstawProgram
+    Opis: Ustawia numer programu prania od (1-12)
+    parametry: numer 
+    zwracany typ i opis: int 
+   */
+
+
     class Odkurzacz : Urzadzenie
     {
         private bool stan = false;
@@ -44,6 +61,13 @@ namespace Task4
             }
         }
 
+        /*
+    Nazwa: On
+    Opis: Włącza odkurzacz, wyświetla odpowiedni komunikat
+    parametry: brak
+    zwracany typ i opis: brak
+   */
+
         public void Off()
         {
             if (stan)
@@ -53,5 +77,12 @@ namespace Task4
             }
         }
     }
+
+    /*
+    Nazwa: Off
+    Opis: Wyłącza odkurzacz oraz wyświetla odpowiedni komunikat
+    parametry: brak
+    zwracany typ i opis: brak
+   */
 
 }

@@ -9,10 +9,10 @@ namespace ParticalTasksConsoleApp.Styczen2023_1
     {
         static void Main()
         {
-            /*
+            
             //zad 1
             Task1.Task_1();
-            */
+            
 
             /*
             //zad2
@@ -22,7 +22,6 @@ namespace ParticalTasksConsoleApp.Styczen2023_1
             osoba1.Przywitanie("Bartek");
             osoba2.Przywitanie("Kasia");
             osoba3.Przywitanie("Marek");
-            Console.WriteLine("Test zakończony.");
             */
 
             /*
@@ -39,10 +38,11 @@ namespace ParticalTasksConsoleApp.Styczen2023_1
             odkurzacz.On();
             odkurzacz.Komunikat("Odkurzacz wyładował się");
             odkurzacz.Off();
-            */
+           */
 
             
             //zad3
+            /*
             Film film = new Film();
 
             Console.WriteLine("SYSTEM WYPOŻYCZALNI FILMÓW");
