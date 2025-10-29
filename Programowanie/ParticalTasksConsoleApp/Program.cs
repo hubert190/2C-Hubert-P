@@ -91,3 +91,100 @@ namespace Task4
     }
 }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+using System;
+
+namespace WypozyczalniaFilmow
+{
+    class Film
+    {
+
+        private string tytul;
+        private int liczbaWypozyczen;
+
+
+        public Film()
+        {
+            tytul = "";
+            liczbaWypozyczen = 0;
+        }
+
+
+        public void SetTytul(string nowyTytul)
+        {
+            if (nowyTytul.Length <= 20)
+                tytul = nowyTytul;
+            else
+                Console.WriteLine("Tytuł jest zbyt długi (maks. 20 znaków).");
+        }
+
+
+        public string GetTytul()
+        {
+            return tytul;
+        }
+
+
+        public int GetLiczbaWypozyczen()
+        {
+            return liczbaWypozyczen;
+        }
+
+        public void InkrementujWypozyczenia()
+        {
+            liczbaWypozyczen++;
+        }
+    }
+
+    class Program
+    {
+        static void Main(string[] args)
+        {
+
+            Film film = new Film();
+
+            Console.WriteLine("SYSTEM WYPOŻYCZALNI FILMÓW");
+
+
+            Console.WriteLine($"Tytuł: '{film.GetTytul()}', liczba wypożyczeń: {film.GetLiczbaWypozyczen()} \n");
+
+
+            Console.Write("Podaj tytuł filmu: ");
+            string tytul = Console.ReadLine();
+            film.SetTytul(tytul);
+
+
+            Console.WriteLine($"Tytuł filmu został ustawiony na: '{film.GetTytul()}'");
+
+
+            Console.WriteLine($"Aktualny tytuł filmu: {film.GetTytul()}");
+            Console.WriteLine($"Liczba wypożyczeń: {film.GetLiczbaWypozyczen()}");
+
+            Console.WriteLine("\nTest inkrementacji liczby wypożyczeń:");
+            Console.WriteLine($"Przed inkrementacją: {film.GetLiczbaWypozyczen()}");
+            film.InkrementujWypozyczenia();
+            Console.WriteLine($"Po inkrementacji: {film.GetLiczbaWypozyczen()}");
+
+        }
+    }
+}
+
