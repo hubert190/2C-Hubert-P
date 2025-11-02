@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Task4
+namespace ParticalTasksConsoleApp.styczen2025
 {
 
     class Urzadzenie

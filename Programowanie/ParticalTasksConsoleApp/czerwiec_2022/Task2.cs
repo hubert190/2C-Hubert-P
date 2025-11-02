@@ -1,13 +1,14 @@
 using System;
 
 
-namespace ParcticalTasksConsoleApp.Task2022_06
+namespace ParticalTasksConsoleApp.czerwiec_2022
 {
     public class Osoba
     {
-        static long numberOfCreatedClass = 0;
+        private static long numberOfCreatedClass = 0;
         private int id;
         private string imie;
+        public static long Instances => numberOfCreatedClass;
         public Osoba(int id, string imie)
         {
             numberOfCreatedClass++;

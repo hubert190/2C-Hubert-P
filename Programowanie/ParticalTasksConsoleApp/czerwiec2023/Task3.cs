@@ -1,7 +1,24 @@
 ﻿using System;
 
-namespace WypozyczalniaFilmow
+namespace ParticalTasksConsoleApp.czerwiec2023
 {
+
+    /*******************************************************
+     nazwa klasy: Film
+     pola:
+       tytul - przechowuje tytuł filmu
+       liczbaWypozyczen - przechowuje liczbę wypożyczeń filmu
+     metody:
+         SetTytul(string nowyTytul) – ustawia nowy tytuł filmu
+        GetTytul() – zwraca tytuł filmu
+        GetLiczbaWypozyczen() – zwraca liczbę wypożyczeń filmu
+        InkrementujWypozyczenia() – zwiększa liczbę wypożyczeń o 1
+     informacje:
+        Klasa robi film w wypożyczalni umożliwia zapisywanie jego tytułu
+        oraz liczenie ile razy dany film został wypożyczony
+     autor: 01234567890
+    *******************************************************/
+
     class Film
     {
 

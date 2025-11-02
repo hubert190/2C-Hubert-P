@@ -5,7 +5,7 @@ using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ParticalTasksConsoleApp.Styczen2023_1
+namespace ParticalTasksConsoleApp.Styczen2023
 {
     internal class Task1
     {
