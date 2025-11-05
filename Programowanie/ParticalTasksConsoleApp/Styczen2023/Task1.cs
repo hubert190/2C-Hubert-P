@@ -55,4 +55,3 @@ namespace ParticalTasksConsoleApp.Styczen2023
     autor: 01234567890
     **************************/
 }
-
