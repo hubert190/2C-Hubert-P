@@ -1,5 +1,32 @@
 ﻿using System;
+/*************************************
+   Nazwa: Komunikat
+   Opis: Wyświetla w konsoli przekazywany komunikat tekstowy
+   parametry: tresc
+   zwracany typ i opis: brak
+  *********************************/
 
+/********************************
+ Nazwa: UstawProgram
+ Opis: Ustawia numer programu prania od (1-12)
+ parametry: numer 
+ zwracany typ i opis: int 
+**********************************/
+
+
+/*************************************
+Nazwa: On
+Opis: Włącza odkurzacz, wyświetla odpowiedni komunikat
+parametry: brak
+zwracany typ i opis: brak
+**********************************/
+
+/***********************************
+Nazwa: Off
+Opis: Wyłącza odkurzacz oraz wyświetla odpowiedni komunikat
+parametry: brak
+zwracany typ i opis: brak
+*************************************/
 namespace ParticalTasksConsoleApp.styczen2025
 {
 
@@ -24,14 +51,13 @@ namespace ParticalTasksConsoleApp.styczen2025
             }
             else
             {
-                Komunikat("Podano niepoprawny numer programu");
+                Komunikat("Podano niepoprawny numer");
                 numerProgramu = 0;
             }
 
             return numerProgramu;
         }
     }
-
     class Odkurzacz : Urzadzenie
     {
         private bool stan = false;
@@ -45,8 +71,6 @@ namespace ParticalTasksConsoleApp.styczen2025
             }
         }
 
-
-
         public void Off()
         {
             if (stan)
@@ -57,33 +81,6 @@ namespace ParticalTasksConsoleApp.styczen2025
         }
     }
 
-    /*************************************
-     Nazwa: Komunikat
-     Opis: Wyświetla w konsoli przekazywany komunikat tekstowy
-     parametry: tresc
-     zwracany typ i opis: brak
-    *********************************/
-
-    /********************************
-     Nazwa: UstawProgram
-     Opis: Ustawia numer programu prania od (1-12)
-     parametry: numer 
-     zwracany typ i opis: int 
-    **********************************/
-
-
-    /*************************************
-    Nazwa: On
-    Opis: Włącza odkurzacz, wyświetla odpowiedni komunikat
-    parametry: brak
-    zwracany typ i opis: brak
-    **********************************/
-
-    /***********************************
-    Nazwa: Off
-    Opis: Wyłącza odkurzacz oraz wyświetla odpowiedni komunikat
-    parametry: brak
-    zwracany typ i opis: brak
-   *************************************/
+  
 
 }

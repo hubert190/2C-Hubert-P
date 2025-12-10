@@ -9,7 +9,7 @@ namespace ParticalTasksConsoleApp
     {
         static void Main()
         {
-         /*   
+
             //zad 1
             Task1.Task_1();
 
@@ -23,10 +23,10 @@ namespace ParticalTasksConsoleApp
             string nowyTytul = Console.ReadLine();
             film.SetTytul(nowyTytul);
             Console.WriteLine($"Aktualny tytuł filmu: {film.GetTytul()}");
-            Console.WriteLine($"Liczba wypożyczeń przed inkrementacją: {film.GetLiczbaWypozyczen()}");
-            film.InkrementujWypozyczenia();
-            Console.WriteLine($"Liczba wypożyczeń po inkrementacji: {film.GetLiczbaWypozyczen()}");
-         */
+            Console.WriteLine($"Liczba wypożyczeń przed inkrementaca: {film.GetLiczbaWypozyczen()}");
+            film.Inkrementacja();
+            Console.WriteLine($"Liczba wypożyczeń po inkrementacj: {film.GetLiczbaWypozyczen()}");
+
 
             //zad2
             Console.WriteLine($"Liczba zarejestrowanych osób to {Osoba.Instances}");
@@ -43,10 +43,11 @@ namespace ParticalTasksConsoleApp
             osoba3.Przywitanie("Jan");
             Console.WriteLine($"Liczba zarejestrowanych osób to {Osoba.Instances}");
 
+
             //zad4
             Pralka pralka = new Pralka();
             Odkurzacz odkurzacz = new Odkurzacz();
-            Console.Write("Podaj numer prania 1..12: ");
+            Console.Write("Podaj numer prania 1..12:");
             int numer;
             bool poprawny = int.TryParse(Console.ReadLine(), out numer);
             if (!poprawny) numer = 0;
@@ -65,6 +66,6 @@ namespace ParticalTasksConsoleApp
             n2.TitleandContains();
             n2.Diag();
 
-        }m
+        }
     }
 }

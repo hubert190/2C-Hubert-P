@@ -4,12 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-/************************
+/*
 klasa: <Note>
 opis:  zawiera 2 metody 1 wypisuje wytul i tresc notaki a 2 wypisuje info daignostyczne
 pola   noteCounter - licznik notatek
        uniqID - przechowóje unikalne id notatki
-autor: ...
 */
 internal class Note
 {
@@ -34,7 +33,7 @@ internal class Note
 
     public void Diag()
     {
-        Console.WriteLine($"ID: {Id}; Licznik: {noteCounter}; Tytul: {title}; Tresc: {contains}");
+        Console.WriteLine($" {Id}; {noteCounter}; {title};  {contains}");
     }
 }
 

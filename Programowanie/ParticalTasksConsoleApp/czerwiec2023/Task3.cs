@@ -31,29 +31,22 @@ namespace ParticalTasksConsoleApp.czerwiec2023
             tytul = "";
             liczbaWypozyczen = 0;
         }
-
-
         public void SetTytul(string nowyTytul)
         {
             if (nowyTytul.Length <= 20)
                 tytul = nowyTytul;
             else
-                Console.WriteLine("Tytuł jest zbyt długi (maks. 20 znaków).");
+                Console.WriteLine("Tytuł jest zbyt długi maks 20 znaków");
         }
-
-
         public string GetTytul()
         {
             return tytul;
         }
-
-
         public int GetLiczbaWypozyczen()
         {
             return liczbaWypozyczen;
         }
-
-        public void InkrementujWypozyczenia()
+        public void Inkrementacja()
         {
             liczbaWypozyczen++;
         }
