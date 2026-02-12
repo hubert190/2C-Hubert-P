@@ -64,182 +64,6 @@ namespace LinqPracticalTasksConsoleApp;
 */
 
 
-internal class Task1
-{
-    void Print<T>(string title, IEnumerable<T> data)
-    {
-        Console.WriteLine($"\n=== {title} ===");
-        foreach (var item in data)
-            Console.WriteLine(item);
-    }
-
-    public void DoTasks()
-    {
-        var people = new List<Person>
-        {
-            new Person() { Id=1, FirstName="Anna",  LastName="Nowak",    Age=29, Gender=Gender.Female, City="Kielce", Salary=8200m,  Skills=["C#", "LINQ", "SQL"] },
-            new() { Id=2, FirstName="Marek", LastName="Kowalski", Age=43, Gender=Gender.Male,   City="Warszawa", Salary=15000m, Skills=["Azure", "C#", "DevOps"] },
-            new() { Id=3, FirstName="Ewa",   LastName="Wiśniewska",Age=35, Gender=Gender.Female, City="Kraków", Salary=9800m,  Skills=["JavaScript", "React"] },
-            new() { Id=4, FirstName="Jan",   LastName="Zieliński", Age=43, Gender=Gender.Male,   City="Gdańsk", Salary=12000m, Skills=["C#", "SQL"] },
-            new() { Id=5, FirstName="Ola",   LastName="Maj",       Age=26, Gender=Gender.Female, City="Kielce", Salary=7200m,  Skills=["Python", "ML"] },
-            new() { Id=6, FirstName="Piotr", LastName="Lewandowski",Age=37,Gender=Gender.Male,   City="Warszawa", Salary=13400m, Skills=["C#", "LINQ", "Azure"] },
-            new() { Id=7, FirstName="Iga",   LastName="Kowal",     Age=31, Gender=Gender.Female, City="Kraków", Salary=9900m,  Skills=["Go", "Kubernetes"] },
-            new() { Id=8, FirstName="Tomek", LastName="Sikora",    Age=29, Gender=Gender.Male,   City="Kielce", Salary=8800m,  Skills=["C#", "MAUI", "Bluetooth"] },
-        };
-
-        // === POZIOM 1 ===
-
-        // Zadanie 1
-        var q1 = people.Where(p => p.City == "Kraków");
-        Print("Zadanie 1", q1);
-
-        // Zadanie 2
-        var q2 = people.Where(p => p.Age >= 18);
-        Print("Zadanie 2", q2);
-
-        // Zadanie 3
-        var q3 = people.OrderBy(p => p.Age);
-        Print("Zadanie 3", q3);
-
-        // Zadanie 4
-        var q4 = people.OrderByDescending(p => p.LastName);
-        Print("Zadanie 4", q4);
-
-        // Zadanie 5
-        var q5 = people.Select(p => p.FirstName + " " + p.LastName);
-        Print("Zadanie 5", q5);
-
-        // Zadanie 6
-        var q6 = people.Select(p => p.City).Distinct();
-        Print("Zadanie 6", q6);
-
-        // Zadanie 7
-        var q7 = people.Count(p => p.City == "Warszawa");
-        Console.WriteLine("Zadanie 7 ===\n{q7}");
-
-        // Zadanie 8
-        var q8 = people.Average(p => p.Salary);
-        Console.WriteLine($"\n=== Zadanie 8 ===\n{q8}");
-
-        // Zadanie 9
-        var q9 = people.OrderBy(p => p.Age).First();
-        Print("Zadanie 9", new[] { q9 });
-
-        // Zadanie 10
-        var q10 = people.Any(p => p.City == "Gdańsk");
-        Console.WriteLine($"\n=== Zadanie 10 ===\n{q10}");
-
-        // Zadanie 11
-        var q11 = people
-            .OrderBy(p => p.City)
-            .ThenByDescending(p => p.Salary);
-        Print("Zadanie 11", q11);
-
-        // Zadanie 12
-        var q12 = people.Where(p => p.Age >= 25 && p.Age <= 35);
-        Print("Zadanie 12", q12);
-
-        // Zadanie 13
-        var q13 = people
-            .Where(p => p.City == "Kielce")
-            .Sum(p => p.Salary);
-        Console.WriteLine($"\n=== Zadanie 13 ===\n{q13}");
-
-        // Zadanie 14
-        var q14 = people.FirstOrDefault(p => p.Salary > 10000m);
-        Print("Zadanie 14", q14 != null ? new[] { q14 } : Array.Empty<Person>());
-
-        // Zadanie 15
-        var q15 = people
-            .OrderBy(p => p.LastName)
-            .Last();
-        Print("Zadanie 15", new[] { q15 });
-
-        // Zadanie 16
-        var q16 = people
-            .Select(p => $"{p.FirstName} {p.LastName} ({p.City})");
-        Print("Zadanie 16", q16);
-
-        // Zadanie 17
-        var q17 = people.All(p => p.Age >= 18);
-        Console.WriteLine($"\n=== Zadanie 17 ===\n{q17}");
-
-        // Zadanie 18
-        var q18 = people.Count(p => p.Gender == Gender.Female);
-        Console.WriteLine($"\n=== Zadanie 18 ===\n{q18}");
-
-        // Zadanie 19
-        var avgSalary = people.Average(p => p.Salary);
-        var q19 = people.Where(p => p.Salary > avgSalary);
-        Print("Zadanie 19", q19);
-
-        // Zadanie 20
-        var q20 = people
-            .Where(p => p.City == "Kraków")
-            .OrderByDescending(p => p.Age)
-            .FirstOrDefault();
-        Print("Zadanie 20", q20 != null ? new[] { q20 } : Array.Empty<Person>());
-
-        // Zadanie 22
-        var q22 = people.Where(p => p.Skills.Contains("C#"));
-        Print("Zadanie 22", q22);
-
-        // Zadanie 23
-        var q23 = people.Where(p => p.Skills.Count >= 3);
-        Print("Zadanie 23", q23);
-
-        // Zadanie 24
-        var q24 = people
-            .Where(p => p.City == "Warszawa")
-            .OrderByDescending(p => p.Age)
-            .Select(p => new { p.FirstName, p.LastName, p.Age, p.Salary });
-        Print("Zadanie 24", q24);
-
-        // Zadanie 25
-        var q25 = people.Any(p => p.Skills.Contains("Azure"));
-        Console.WriteLine($"\n=== Zadanie 25 ===\n{q25}");
-
-        // Zadanie 26
-        var q26 = people.All(p => p.Salary >= 4000m);
-        Console.WriteLine($"\n=== Zadanie 26 ===\n{q26}");
-
-        // Zadanie 27
-        var q27 = people.OrderByDescending(p => p.Salary).First();
-        Print("Zadanie 27", new[] { q27 });
-
-        // Zadanie 28
-        var q28 = people.OrderBy(p => p.Salary).First();
-        Print("Zadanie 28", new[] { q28 });
-
-        // Zadanie 29
-        var maxAge = people.Max(p => p.Age);
-        var q29 = people.Where(p => p.Age == maxAge);
-        Print("Zadanie 29", q29);
-
-        // Zadanie 32
-        var q32 = people.OrderBy(p => p.Skills.Count);
-        Print("Zadanie 32", q32);
-
-        // Zadanie 33
-        var q33High = people.Where(p => p.Salary >= 8000m);
-        var q33Low = people.Where(p => p.Salary < 8000m);
-        Print("Zarabiają >= 8000", q33High);
-        Print("Zarabiają < 8000", q33Low);
-
-        // Zadanie 35
-        var q35 = people
-            .GroupBy(p => $"{(p.Age / 10) * 10}-{(p.Age / 10) * 10 + 9}");
-
-        foreach (var group in q35)
-        {
-            Console.WriteLine($"\n=== Przedział {group.Key} ===");
-            foreach (var person in group)
-                Console.WriteLine(person);
-        }
-    }
-}
-
-
 
 internal class Task1
 {
@@ -300,15 +124,13 @@ internal class Task1
         var q10 = people.Any(p => p.City == "Gdańsk");
         Print("Zadanie 10", q10);
 
-        var q11 = people.OrderBy(p => p.City)
-                        .ThenByDescending(p => p.Salary);
+        var q11 = people.OrderBy(p => p.City).ThenByDescending(p => p.Salary);
         Print("Zadanie 11", q11);
 
         var q12 = people.Where(p => p.Age >= 25 && p.Age <= 35);
         Print("Zadanie 12", q12);
 
-        var q13 = people.Where(p => p.City == "Kielce")
-                        .Sum(p => p.Salary);
+        var q13 = people.Where(p => p.City == "Kielce").Sum(p => p.Salary);
         Print("Zadanie 13", q13);
 
         var q14 = people.FirstOrDefault(p => p.Salary > 10000m);
@@ -370,12 +192,6 @@ internal class Task1
         var q33Low = people.Where(p => p.Salary < 8000m);
         Print("Zarabiają < 8000", q33Low);
 
-        var q35 = people.GroupBy(p => $"{(p.Age / 10) * 10}-{(p.Age / 10) * 10 + 9}");
-        foreach (var group in q35)
-        {
-            var temp = group;
-            Print($"Przedział {group.Key}", temp);
-        }
     }
 }
 
