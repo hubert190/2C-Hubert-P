@@ -241,7 +241,143 @@ internal class Task1
 
 
 
+internal class Task1
+{
+    void Print<T>(string title, IEnumerable<T> data)
+    {
+        Console.WriteLine($"\n{title}");
+        foreach (var item in data)
+            Console.WriteLine(item);
+    }
 
+    void Print<T>(string title, T value)
+    {
+        Console.WriteLine($"\n{title}");
+        Console.WriteLine(value);
+    }
+
+    public void DoTasks()
+    {
+        var people = new List<Person>
+        {
+            new() { Id=1, FirstName="Anna", LastName="Nowak", Age=29, Gender=Gender.Female, City="Kielce", Salary=8200m, Skills=["C#", "LINQ", "SQL"] },
+            new() { Id=2, FirstName="Marek", LastName="Kowalski", Age=43, Gender=Gender.Male, City="Warszawa", Salary=15000m, Skills=["Azure", "C#", "DevOps"] },
+            new() { Id=3, FirstName="Ewa", LastName="Wiśniewska", Age=35, Gender=Gender.Female, City="Kraków", Salary=9800m, Skills=["JavaScript", "React"] },
+            new() { Id=4, FirstName="Jan", LastName="Zieliński", Age=43, Gender=Gender.Male, City="Gdańsk", Salary=12000m, Skills=["C#", "SQL"] },
+            new() { Id=5, FirstName="Ola", LastName="Maj", Age=26, Gender=Gender.Female, City="Kielce", Salary=7200m, Skills=["Python", "ML"] },
+            new() { Id=6, FirstName="Piotr", LastName="Lewandowski", Age=37, Gender=Gender.Male, City="Warszawa", Salary=13400m, Skills=["C#", "LINQ", "Azure"] },
+            new() { Id=7, FirstName="Iga", LastName="Kowal", Age=31, Gender=Gender.Female, City="Kraków", Salary=9900m, Skills=["Go", "Kubernetes"] },
+            new() { Id=8, FirstName="Tomek", LastName="Sikora", Age=29, Gender=Gender.Male, City="Kielce", Salary=8800m, Skills=["C#", "MAUI", "Bluetooth"] },
+        };
+
+        var q1 = people.Where(p => p.City == "Kraków");
+        Print("Zadanie 1", q1);
+
+        var q2 = people.Where(p => p.Age >= 18);
+        Print("Zadanie 2", q2);
+
+        var q3 = people.OrderBy(p => p.Age);
+        Print("Zadanie 3", q3);
+
+        var q4 = people.OrderByDescending(p => p.LastName);
+        Print("Zadanie 4", q4);
+
+        var q5 = people.Select(p => $"{p.FirstName} {p.LastName}");
+        Print("Zadanie 5", q5);
+
+        var q6 = people.Select(p => p.City).Distinct();
+        Print("Zadanie 6", q6);
+
+        var q7 = people.Count(p => p.City == "Warszawa");
+        Print("Zadanie 7", q7);
+
+        var q8 = people.Average(p => p.Salary);
+        Print("Zadanie 8", q8);
+
+        var q9 = people.MinBy(p => p.Age);
+        Print("Zadanie 9", q9);
+
+        var q10 = people.Any(p => p.City == "Gdańsk");
+        Print("Zadanie 10", q10);
+
+        var q11 = people.OrderBy(p => p.City)
+                        .ThenByDescending(p => p.Salary);
+        Print("Zadanie 11", q11);
+
+        var q12 = people.Where(p => p.Age >= 25 && p.Age <= 35);
+        Print("Zadanie 12", q12);
+
+        var q13 = people.Where(p => p.City == "Kielce")
+                        .Sum(p => p.Salary);
+        Print("Zadanie 13", q13);
+
+        var q14 = people.FirstOrDefault(p => p.Salary > 10000m);
+        Print("Zadanie 14", q14);
+
+        var q15 = people.MaxBy(p => p.LastName);
+        Print("Zadanie 15", q15);
+
+        var q16 = people.Select(p => $"{p.FirstName} {p.LastName} ({p.City})");
+        Print("Zadanie 16", q16);
+
+        var q17 = people.All(p => p.Age >= 18);
+        Print("Zadanie 17", q17);
+
+        var q18 = people.Count(p => p.Gender == Gender.Female);
+        Print("Zadanie 18", q18);
+
+        var avgSalary = people.Average(p => p.Salary);
+        var q19 = people.Where(p => p.Salary > avgSalary);
+        Print("Zadanie 19", q19);
+
+        var q20 = people.Where(p => p.City == "Kraków")
+                        .MaxBy(p => p.Age);
+        Print("Zadanie 20", q20);
+
+        var q22 = people.Where(p => p.Skills.Contains("C#"));
+        Print("Zadanie 22", q22);
+
+        var q23 = people.Where(p => p.Skills.Count >= 3);
+        Print("Zadanie 23", q23);
+
+        var q24 = people.Where(p => p.City == "Warszawa")
+                        .OrderByDescending(p => p.Age)
+                        .Select(p => new { p.FirstName, p.LastName, p.Age, p.Salary });
+        Print("Zadanie 24", q24);
+
+        var q25 = people.Any(p => p.Skills.Contains("Azure"));
+        Print("Zadanie 25", q25);
+
+        var q26 = people.All(p => p.Salary >= 4000m);
+        Print("Zadanie 26", q26);
+
+        var q27 = people.MaxBy(p => p.Salary);
+        Print("Zadanie 27", q27);
+
+        var q28 = people.MinBy(p => p.Salary);
+        Print("Zadanie 28", q28);
+
+        var maxAge = people.Max(p => p.Age);
+        var q29 = people.Where(p => p.Age == maxAge);
+        Print("Zadanie 29", q29);
+
+        var q32 = people.OrderBy(p => p.Skills.Count);
+        Print("Zadanie 32", q32);
+
+        var q33High = people.Where(p => p.Salary >= 8000m);
+        Print("Zarabiają >= 8000", q33High);
+
+        var q33Low = people.Where(p => p.Salary < 8000m);
+        Print("Zarabiają < 8000", q33Low);
+
+        var q35 = people.GroupBy(p => $"{(p.Age / 10) * 10}-{(p.Age / 10) * 10 + 9}");
+        foreach (var group in q35)
+        {
+            var temp = group;
+            Print($"Przedział {group.Key}", temp);
+        }
+    }
+}
 
 
 
