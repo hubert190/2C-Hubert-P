@@ -106,263 +106,143 @@ internal class Task1
         Print("Zadanie 4", q4);
 
         // Zadanie 5
-var q5 = people.Select(p => p.FirstName + " " + p.LastName);
-Print("Zadanie 5", q5);
-
-// Zadanie 6
-var q6 = people.Select(p => p.City).Distinct();
-Print("Zadanie 6", q6);
-
-// Zadanie 7
-var q7 = people.Count(p => p.City == "Warszawa");
-Console.WriteLine($"\n=== Zadanie 7 ===\n{q7}");
-
-// Zadanie 8
-var q8 = people.Average(p => p.Salary);
-Console.WriteLine($"\n=== Zadanie 8 ===\n{q8}");
-
-// Zadanie 9
-var q9 = people.OrderBy(p => p.Age).First();
-Print("Zadanie 9", new[] { q9 });
-
-// Zadanie 10
-var q10 = people.Any(p => p.City == "Gdańsk");
-Console.WriteLine($"\n=== Zadanie 10 ===\n{q10}");
-
-// Zadanie 11
-var q11 = people
-    .OrderBy(p => p.City)
-    .ThenByDescending(p => p.Salary);
-Print("Zadanie 11", q11);
-
-// Zadanie 12
-var q12 = people.Where(p => p.Age >= 25 && p.Age <= 35);
-Print("Zadanie 12", q12);
-
-// Zadanie 13
-var q13 = people
-    .Where(p => p.City == "Kielce")
-    .Sum(p => p.Salary);
-Console.WriteLine($"\n=== Zadanie 13 ===\n{q13}");
-
-// Zadanie 14
-var q14 = people.FirstOrDefault(p => p.Salary > 10000m);
-Print("Zadanie 14", q14 != null ? new[] { q14 } : Array.Empty<Person>());
-
-// Zadanie 15
-var q15 = people
-    .OrderBy(p => p.LastName)
-    .Last();
-Print("Zadanie 15", new[] { q15 });
-
-// Zadanie 16
-var q16 = people
-    .Select(p => $"{p.FirstName} {p.LastName} ({p.City})");
-Print("Zadanie 16", q16);
-
-// Zadanie 17
-var q17 = people.All(p => p.Age >= 18);
-Console.WriteLine($"\n=== Zadanie 17 ===\n{q17}");
-
-// Zadanie 18
-var q18 = people.Count(p => p.Gender == Gender.Female);
-Console.WriteLine($"\n=== Zadanie 18 ===\n{q18}");
-
-// Zadanie 19
-var avgSalary = people.Average(p => p.Salary);
-var q19 = people.Where(p => p.Salary > avgSalary);
-Print("Zadanie 19", q19);
-
-// Zadanie 20
-var q20 = people
-    .Where(p => p.City == "Kraków")
-    .OrderByDescending(p => p.Age)
-    .FirstOrDefault();
-Print("Zadanie 20", q20 != null ? new[] { q20 } : Array.Empty<Person>());
-
-// Zadanie 22
-var q22 = people.Where(p => p.Skills.Contains("C#"));
-Print("Zadanie 22", q22);
-
-// Zadanie 23
-var q23 = people.Where(p => p.Skills.Count >= 3);
-Print("Zadanie 23", q23);
-
-// Zadanie 24
-var q24 = people
-    .Where(p => p.City == "Warszawa")
-    .OrderByDescending(p => p.Age)
-    .Select(p => new { p.FirstName, p.LastName, p.Age, p.Salary });
-Print("Zadanie 24", q24);
-
-// Zadanie 25
-var q25 = people.Any(p => p.Skills.Contains("Azure"));
-Console.WriteLine($"\n=== Zadanie 25 ===\n{q25}");
-
-// Zadanie 26
-var q26 = people.All(p => p.Salary >= 4000m);
-Console.WriteLine($"\n=== Zadanie 26 ===\n{q26}");
-
-// Zadanie 27
-var q27 = people.OrderByDescending(p => p.Salary).First();
-Print("Zadanie 27", new[] { q27 });
-
-// Zadanie 28
-var q28 = people.OrderBy(p => p.Salary).First();
-Print("Zadanie 28", new[] { q28 });
-
-// Zadanie 29
-var maxAge = people.Max(p => p.Age);
-var q29 = people.Where(p => p.Age == maxAge);
-Print("Zadanie 29", q29);
-
-// Zadanie 32
-var q32 = people.OrderBy(p => p.Skills.Count);
-Print("Zadanie 32", q32);
-
-// Zadanie 33
-var q33High = people.Where(p => p.Salary >= 8000m);
-var q33Low = people.Where(p => p.Salary < 8000m);
-Print("Zarabiają >= 8000", q33High);
-Print("Zarabiają < 8000", q33Low);
-
-// Zadanie 35
-var q35 = people
-    .GroupBy(p => $"{(p.Age / 10) * 10}-{(p.Age / 10) * 10 + 9}");
-
-foreach (var group in q35)
-{
-    Console.WriteLine($"\n=== Przedział {group.Key} ===");
-    foreach (var person in group)
-        Console.WriteLine(person);
-}
-    }
-}   
-
-
-
-
-
-
-
-
-internal class Task2
-{
-    void Print<T>(string title, IEnumerable<T> data)
-    {
-        Console.WriteLine($"\n=== {title} ===");
-        foreach (var item in data)
-            Console.WriteLine(item);
-    }
-
-    public void DoTask()
-    {
-        var orders = new List<Order>
-        {
-            new() { Id = 1,  Customer="Anna", Product="Laptop",    Quantity=1, PricePerItem=4500m, OrderDate=DateTime.Today.AddDays(-20), Status=OrderStatus.New },
-            new() { Id = 2,  Customer="Anna", Product="Myszka",    Quantity=2, PricePerItem=75m,   OrderDate=DateTime.Today.AddDays(-5),  Status=OrderStatus.Delivered },
-            new() { Id = 3,  Customer="Anna", Product="Laptop",    Quantity=1, PricePerItem=4600m, OrderDate=DateTime.Today.AddDays(-2),  Status=OrderStatus.Shipped },
-
-            new() { Id = 4,  Customer="Piotr", Product="Monitor",   Quantity=1, PricePerItem=900m,  OrderDate=DateTime.Today.AddDays(-35), Status=OrderStatus.Delivered },
-            new() { Id = 5,  Customer="Piotr", Product="Klawiatura",Quantity=1, PricePerItem=120m,  OrderDate=DateTime.Today.AddDays(-10), Status=OrderStatus.Cancelled },
-
-            new() { Id = 6,  Customer="Ewa", Product="Tablet",      Quantity=1, PricePerItem=1500m, OrderDate=DateTime.Today.AddDays(-8),  Status=OrderStatus.Processing },
-            new() { Id = 7,  Customer="Ewa", Product="Słuchawki",   Quantity=2, PricePerItem=300m,  OrderDate=DateTime.Today.AddDays(-3),  Status=OrderStatus.New },
-
-            new() { Id = 8,  Customer="Ola", Product="Laptop",      Quantity=1, PricePerItem=4200m, OrderDate=DateTime.Today.AddDays(-40), Status=OrderStatus.Delivered },
-            new() { Id = 9,  Customer="Ola", Product="Monitor",     Quantity=3, PricePerItem=850m,  OrderDate=DateTime.Today.AddDays(-12), Status=OrderStatus.Processing },
-            new() { Id = 10, Customer="Ola", Product="Laptop",      Quantity=2, PricePerItem=4100m, OrderDate=DateTime.Today.AddDays(-4),  Status=OrderStatus.New },
-
-            new() { Id = 11, Customer="Jan", Product="Monitor",     Quantity=2, PricePerItem=780m,  OrderDate=DateTime.Today.AddDays(-18), Status=OrderStatus.Delivered },
-            new() { Id = 12, Customer="Jan", Product="Monitor",     Quantity=1, PricePerItem=820m,  OrderDate=DateTime.Today.AddDays(-1),  Status=OrderStatus.Shipped },
-
-            new() { Id = 13, Customer="Iga", Product="Tablet",      Quantity=1, PricePerItem=1600m, OrderDate=DateTime.Today.AddDays(-7),  Status=OrderStatus.Processing },
-            new() { Id = 14, Customer="Iga", Product="Tablet",      Quantity=2, PricePerItem=1550m, OrderDate=DateTime.Today.AddDays(-2),  Status=OrderStatus.Delivered },
-
-            new() { Id = 15, Customer="Kasia", Product="Drukarka",  Quantity=1, PricePerItem=700m,  OrderDate=DateTime.Today.AddDays(-1),  Status=OrderStatus.New },
-            new() { Id = 16, Customer="Kasia", Product="Laptop",    Quantity=1, PricePerItem=4300m, OrderDate=DateTime.Today.AddDays(-28), Status=OrderStatus.Delivered }
-        };
-
-        // 1
-        var q1 = orders.Where(o => o.Status == OrderStatus.New);
-        Print("Zadanie 1", q1);
-
-        // 2
-        var q2 = orders.Any(o => o.Product == "Laptop");
-        Console.WriteLine($"\n=== Zadanie 2 ===\n{q2}");
-
-        // 3
-        var q3 = orders.Where(o => o.OrderDate >= DateTime.Today.AddDays(-30));
-        Print("Zadanie 3", q3);
-
-        // 4
-        var q4 = orders.Select(o => $"{o.Customer} - {o.Quantity * o.PricePerItem}");
-        Print("Zadanie 4", q4);
-
-        // 5
-        var q5 = orders.Where(o => o.Product.ToLower().Contains("o"));
+        var q5 = people.Select(p => p.FirstName + " " + p.LastName);
         Print("Zadanie 5", q5);
 
-        // 6
-        var q6 = orders.Where(o => o.Quantity * o.PricePerItem > 1000m
-                                   && o.Status != OrderStatus.Cancelled);
+        // Zadanie 6
+        var q6 = people.Select(p => p.City).Distinct();
         Print("Zadanie 6", q6);
 
-        // 7
-        var q7 = orders.All(o => o.OrderDate.Year == DateTime.Today.Year);
-        Console.WriteLine($"\n=== Zadanie 7 ===\n{q7}");
+        // Zadanie 7
+        var q7 = people.Count(p => p.City == "Warszawa");
+        Console.WriteLine("Zadanie 7 ===\n{q7}");
 
-        // 8
-        var q8 = orders
-            .GroupBy(o => o.Customer)
-            .Where(g => g.Select(x => x.Product).Distinct().Count() > 1)
-            .SelectMany(g => g);
-        Print("Zadanie 8", q8);
+        // Zadanie 8
+        var q8 = people.Average(p => p.Salary);
+        Console.WriteLine($"\n=== Zadanie 8 ===\n{q8}");
 
-        // 9
-        var q9 = orders
-            .GroupBy(o => o.Customer)
-            .Select(g => new
-            {
-                Customer = g.Key,
-                DaysSinceFirstOrder = (DateTime.Today - g.Min(x => x.OrderDate)).Days
-            });
-        Print("Zadanie 9", q9);
+        // Zadanie 9
+        var q9 = people.OrderBy(p => p.Age).First();
+        Print("Zadanie 9", new[] { q9 });
 
-        // 10
-        var q10 = orders
-            .Select(o => new { o.Customer, o.Product })
-            .Distinct();
-        Print("Zadanie 10", q10);
+        // Zadanie 10
+        var q10 = people.Any(p => p.City == "Gdańsk");
+        Console.WriteLine($"\n=== Zadanie 10 ===\n{q10}");
 
-        // 11
-        var q11 = orders
-            .GroupBy(o => o.Customer)
-            .Where(g => g.Any(x => x.Status == OrderStatus.Cancelled)
-                     && g.Any(x => x.Status == OrderStatus.Delivered))
-            .Select(g => g.Key);
+        // Zadanie 11
+        var q11 = people
+            .OrderBy(p => p.City)
+            .ThenByDescending(p => p.Salary);
         Print("Zadanie 11", q11);
 
-        // 12
-        var q12 = orders.Where(o =>
-            o.Quantity * o.PricePerItem >= 1000m &&
-            o.Quantity * o.PricePerItem <= 3000m &&
-            o.OrderDate >= DateTime.Today.AddDays(-14));
+        // Zadanie 12
+        var q12 = people.Where(p => p.Age >= 25 && p.Age <= 35);
         Print("Zadanie 12", q12);
 
-        // 13
-        var q13 = orders
-            .GroupBy(o => new { o.Customer, o.Product })
-            .Where(g => g.Select(x => x.OrderDate).Distinct().Count() > 1)
-            .Select(g => g.Key.Customer)
-            .Distinct();
-        Print("Zadanie 13", q13);
+        // Zadanie 13
+        var q13 = people
+            .Where(p => p.City == "Kielce")
+            .Sum(p => p.Salary);
+        Console.WriteLine($"\n=== Zadanie 13 ===\n{q13}");
 
-        // 14
-        var q14 = orders.Where(o =>
-            o.PricePerItem >
-            orders.Where(other => other.Id != o.Id)
-                  .Max(other => other.Quantity * other.PricePerItem));
-        Print("Zadanie 14", q14);
+        // Zadanie 14
+        var q14 = people.FirstOrDefault(p => p.Salary > 10000m);
+        Print("Zadanie 14", q14 != null ? new[] { q14 } : Array.Empty<Person>());
+
+        // Zadanie 15
+        var q15 = people
+            .OrderBy(p => p.LastName)
+            .Last();
+        Print("Zadanie 15", new[] { q15 });
+
+        // Zadanie 16
+        var q16 = people
+            .Select(p => $"{p.FirstName} {p.LastName} ({p.City})");
+        Print("Zadanie 16", q16);
+
+        // Zadanie 17
+        var q17 = people.All(p => p.Age >= 18);
+        Console.WriteLine($"\n=== Zadanie 17 ===\n{q17}");
+
+        // Zadanie 18
+        var q18 = people.Count(p => p.Gender == Gender.Female);
+        Console.WriteLine($"\n=== Zadanie 18 ===\n{q18}");
+
+        // Zadanie 19
+        var avgSalary = people.Average(p => p.Salary);
+        var q19 = people.Where(p => p.Salary > avgSalary);
+        Print("Zadanie 19", q19);
+
+        // Zadanie 20
+        var q20 = people
+            .Where(p => p.City == "Kraków")
+            .OrderByDescending(p => p.Age)
+            .FirstOrDefault();
+        Print("Zadanie 20", q20 != null ? new[] { q20 } : Array.Empty<Person>());
+
+        // Zadanie 22
+        var q22 = people.Where(p => p.Skills.Contains("C#"));
+        Print("Zadanie 22", q22);
+
+        // Zadanie 23
+        var q23 = people.Where(p => p.Skills.Count >= 3);
+        Print("Zadanie 23", q23);
+
+        // Zadanie 24
+        var q24 = people
+            .Where(p => p.City == "Warszawa")
+            .OrderByDescending(p => p.Age)
+            .Select(p => new { p.FirstName, p.LastName, p.Age, p.Salary });
+        Print("Zadanie 24", q24);
+
+        // Zadanie 25
+        var q25 = people.Any(p => p.Skills.Contains("Azure"));
+        Console.WriteLine($"\n=== Zadanie 25 ===\n{q25}");
+
+        // Zadanie 26
+        var q26 = people.All(p => p.Salary >= 4000m);
+        Console.WriteLine($"\n=== Zadanie 26 ===\n{q26}");
+
+        // Zadanie 27
+        var q27 = people.OrderByDescending(p => p.Salary).First();
+        Print("Zadanie 27", new[] { q27 });
+
+        // Zadanie 28
+        var q28 = people.OrderBy(p => p.Salary).First();
+        Print("Zadanie 28", new[] { q28 });
+
+        // Zadanie 29
+        var maxAge = people.Max(p => p.Age);
+        var q29 = people.Where(p => p.Age == maxAge);
+        Print("Zadanie 29", q29);
+
+        // Zadanie 32
+        var q32 = people.OrderBy(p => p.Skills.Count);
+        Print("Zadanie 32", q32);
+
+        // Zadanie 33
+        var q33High = people.Where(p => p.Salary >= 8000m);
+        var q33Low = people.Where(p => p.Salary < 8000m);
+        Print("Zarabiają >= 8000", q33High);
+        Print("Zarabiają < 8000", q33Low);
+
+        // Zadanie 35
+        var q35 = people
+            .GroupBy(p => $"{(p.Age / 10) * 10}-{(p.Age / 10) * 10 + 9}");
+
+        foreach (var group in q35)
+        {
+            Console.WriteLine($"\n=== Przedział {group.Key} ===");
+            foreach (var person in group)
+                Console.WriteLine(person);
+        }
     }
 }
+
+
+
+
+
+
+
+
