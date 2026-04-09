@@ -192,6 +192,11 @@ internal class Task1
         var q33Low = people.Where(p => p.Salary < 8000m);
         Print("Zarabiają < 8000", q33Low);
 
+         var q35 = people.GroupBy(p => $"{p.Age / 10 * 10}–{p.Age / 10 * 10 + 9}").OrderBy(g => g.Key);
+
+         foreach (var group in q35)
+         Print($"Zadanie 35 {group.Key}", group);
+
     }
 }
 
