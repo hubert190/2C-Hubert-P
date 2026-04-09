@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -74,7 +74,7 @@ internal class Task1
             Console.WriteLine(item);
     }
 
-    void Print<T>(string title, T value)
+    void PrintValue<T>(string title, T value)
     {
         Console.WriteLine($"\n{title}");
         Console.WriteLine(value);
@@ -113,16 +113,16 @@ internal class Task1
         Print("Zadanie 6", q6);
 
         var q7 = people.Count(p => p.City == "Warszawa");
-        Print("Zadanie 7", q7);
+        PrintValue("Zadanie 7", q7);
 
         var q8 = people.Average(p => p.Salary);
-        Print("Zadanie 8", q8);
+        PrintValue("Zadanie 8", q8);
 
         var q9 = people.MinBy(p => p.Age);
-        Print("Zadanie 9", q9);
+        PrintValue("Zadanie 9", q9);
 
         var q10 = people.Any(p => p.City == "Gdańsk");
-        Print("Zadanie 10", q10);
+        PrintValue("Zadanie 10", q10);
 
         var q11 = people.OrderBy(p => p.City).ThenByDescending(p => p.Salary);
         Print("Zadanie 11", q11);
@@ -131,30 +131,29 @@ internal class Task1
         Print("Zadanie 12", q12);
 
         var q13 = people.Where(p => p.City == "Kielce").Sum(p => p.Salary);
-        Print("Zadanie 13", q13);
+        PrintValue("Zadanie 13", q13);
 
         var q14 = people.FirstOrDefault(p => p.Salary > 10000m);
-        Print("Zadanie 14", q14);
+        PrintValue("Zadanie 14", q14);
 
         var q15 = people.MaxBy(p => p.LastName);
-        Print("Zadanie 15", q15);
+        PrintValue("Zadanie 15", q15);
 
         var q16 = people.Select(p => $"{p.FirstName} {p.LastName} ({p.City})");
         Print("Zadanie 16", q16);
 
         var q17 = people.All(p => p.Age >= 18);
-        Print("Zadanie 17", q17);
+        PrintValue("Zadanie 17", q17);
 
         var q18 = people.Count(p => p.Gender == Gender.Female);
-        Print("Zadanie 18", q18);
+        PrintValue("Zadanie 18", q18);
 
         var avgSalary = people.Average(p => p.Salary);
         var q19 = people.Where(p => p.Salary > avgSalary);
         Print("Zadanie 19", q19);
 
-        var q20 = people.Where(p => p.City == "Kraków")
-                        .MaxBy(p => p.Age);
-        Print("Zadanie 20", q20);
+        var q20 = people.Where(p => p.City == "Kraków").MaxBy(p => p.Age);
+        PrintValue("Zadanie 20", q20);
 
         var q22 = people.Where(p => p.Skills.Contains("C#"));
         Print("Zadanie 22", q22);
@@ -162,22 +161,20 @@ internal class Task1
         var q23 = people.Where(p => p.Skills.Count >= 3);
         Print("Zadanie 23", q23);
 
-        var q24 = people.Where(p => p.City == "Warszawa")
-                        .OrderByDescending(p => p.Age)
-                        .Select(p => new { p.FirstName, p.LastName, p.Age, p.Salary });
+        var q24 = people.Where(p => p.City == "Warszawa").OrderByDescending(p => p.Age).Select(p => new { p.FirstName, p.LastName, p.Age, p.Salary });
         Print("Zadanie 24", q24);
 
         var q25 = people.Any(p => p.Skills.Contains("Azure"));
-        Print("Zadanie 25", q25);
+        PrintValue("Zadanie 25", q25);
 
         var q26 = people.All(p => p.Salary >= 4000m);
-        Print("Zadanie 26", q26);
+        PrintValue("Zadanie 26", q26);
 
         var q27 = people.MaxBy(p => p.Salary);
-        Print("Zadanie 27", q27);
+        PrintValue("Zadanie 27", q27);
 
         var q28 = people.MinBy(p => p.Salary);
-        Print("Zadanie 28", q28);
+        PrintValue("Zadanie 28", q28);
 
         var maxAge = people.Max(p => p.Age);
         var q29 = people.Where(p => p.Age == maxAge);
@@ -192,10 +189,11 @@ internal class Task1
         var q33Low = people.Where(p => p.Salary < 8000m);
         Print("Zarabiają < 8000", q33Low);
 
-         var q35 = people.GroupBy(p => $"{p.Age / 10 * 10}–{p.Age / 10 * 10 + 9}").OrderBy(g => g.Key);
 
-         foreach (var group in q35)
-         Print($"Zadanie 35 {group.Key}", group);
+        var q35 = people.GroupBy(p => $"{p.Age / 10 * 10}–{p.Age / 10 * 10 + 9}").OrderBy(g => g.Key);
+
+        foreach (var group in q35)
+            Print($"Zadanie 35 {group.Key}", group);
 
     }
 }
