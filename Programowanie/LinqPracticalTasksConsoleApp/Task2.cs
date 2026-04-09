@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -43,7 +43,7 @@ internal class Task2
             Console.WriteLine(item);
     }
 
-    void Print<T>(string title, T value)
+    void PrintValue<T>(string title, T value)
     {
         Console.WriteLine($"\n{title}");
         Console.WriteLine(value);
@@ -81,7 +81,7 @@ internal class Task2
         Print("Zadanie 1", q1);
 
         var q2 = orders.Any(o => o.Product == "Laptop");
-        Print("Zadanie 2", q2);
+        PrintValue("Zadanie 2", q2);
 
         var q3 = orders.Where(o => o.OrderDate >= DateTime.Today.AddDays(-30));
         Print("Zadanie 3", q3);
@@ -106,22 +106,20 @@ internal class Task2
             .SelectMany(g => g);
         Print("Zadanie 8", q8);
 
-        var q9 = orders
-            .GroupBy(o => o.Customer)
+        var q9 = orders.GroupBy(o => o.Customer)
             .Select(g => new
             {
                 Customer = g.Key,
                 DaysSinceFirstOrder = (DateTime.Today - g.Min(x => x.OrderDate)).Days
             });
+
+
         Print("Zadanie 9", q9);
 
-        var q10 = orders
-            .Select(o => new { o.Customer, o.Product })
-            .Distinct();
+        var q10 = orders.Select(o => new { o.Customer, o.Product }).Distinct();
         Print("Zadanie 10", q10);
 
-        var q11 = orders
-            .GroupBy(o => o.Customer)
+        var q11 = orders.GroupBy(o => o.Customer)
             .Where(g => g.Any(x => x.Status == OrderStatus.Cancelled)
                      && g.Any(x => x.Status == OrderStatus.Delivered))
             .Select(g => g.Key);
@@ -147,5 +145,8 @@ internal class Task2
                         orders.Where(x => x.Id != o.Id)
                               .Max(x => x.Quantity * x.PricePerItem));
         Print("Zadanie 14", q14);
+
+
+
     }
 }
