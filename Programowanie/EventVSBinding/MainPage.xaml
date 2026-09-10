@@ -12,7 +12,7 @@
                 Value="150"
                 x:Name="rotationSlider"
                 />
-                
+
         <Label x:Name="rotationLabel"
                Margin="40"
                HorizontalOptions="Center"
@@ -22,8 +22,28 @@
         <Label Margin="40"
                HorizontalOptions="Center"
                Rotation="{Binding Source={x:Reference rotationSlider}, Path=Value}"
-               Text="{Binding Source={x:Reference rotationSlider}, Path=Value}" />
+               Text="{Binding Path=Value, Source={x:Reference rotationSlider}}" />
+
+
+        <Label Margin="40"
+               BindingContext="{x:Reference rotationSlider}"
+               HorizontalOptions="Center"
+               Rotation="{Binding Path=Value}"
+               Text="{Binding Value}"
+               />
+
+        <Label Text="Podaj komunikat" />
+        <Entry x:Name="komunikat" />
+        <Button Text="Wykonaj" Clicked="Button_Clicked"/>
+        <Label x:Name="resultLabel" />
+
+        <Label Text="Podaj komunikat" />
+        <Entry Text="{Binding Message, Source={x:Reference thisPage}}" />
+        <Button Text="Wykonaj" Clicked="Button_Clicked_1"/>
+        <Label Text="{Binding ReturnMessage, Source={x:Reference thisPage}}" />
+
+
+
     </StackLayout>
-  
+
 </ContentPage>
-dd

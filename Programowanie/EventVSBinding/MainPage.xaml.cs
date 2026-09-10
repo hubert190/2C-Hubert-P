@@ -18,5 +18,28 @@
                 rotationLabel.Rotation = slider.Value;
             }
         }
+
+        private void Button_Clicked(object sender, EventArgs e)
+        {
+            returnMessage = Message;
+        }
+
+        private void Button_Clicked_1(object sender, EventArgs e)
+        {
+
+        }
+
+        public string Message { get; set; }
+
+        private string returnMessage;
+
+        public string ReturnMessage {
+            get {return returnMessage; }
+            set
+            {
+                returnMessage = value;
+                OnPropertyChanged();
+            } 
+        }
     }
 }
