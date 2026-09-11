@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SimpleCalculator.MainPage">
+
+
+    <StackLayout Padding="30,0" Spacing="25">
+        <Label Text="Podaj pierwszą liczbę" />
+        <Entry x:Name="FirstNumberEntry"/>
+        <Label Text="Podaj drugą liczbę" />
+        <Entry x:Name="SecondNumberEntry"/>
+        <Button Text="Oblicz" Clicked="Button_Clicked"/>
+        <Label x:Name="resultLabel"/>
+    </StackLayout>
+
+</ContentPage>
