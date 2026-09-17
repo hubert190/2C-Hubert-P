@@ -11,7 +11,7 @@
                FontAttributes="Bold"
                FontFamily="Arial"
                FontSize="20"
-               Text="Podaj pierwszą liczbę" />
+               Text="Podaj pierwszą liczbęe" />
         <Entry Text="{Binding StrFirstNumber}" />
         <StackLayout Orientation="Horizontal">
             <Label Text="Podaj drugą liczbęe" VerticalTextAlignment="Center" />
