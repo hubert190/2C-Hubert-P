@@ -14,7 +14,7 @@
                Text="Podaj pierwszą liczbę" />
         <Entry Text="{Binding StrFirstNumber}" />
         <StackLayout Orientation="Horizontal">
-            <Label Text="Podaj drugą liczbę" VerticalTextAlignment="Center" />
+            <Label Text="Podaj drugą liczbęe" VerticalTextAlignment="Center" />
             <Entry BackgroundColor="Aqua" Text="{Binding StrSecondNumber}" />
         </StackLayout>
         <Button Clicked="Button_Clicked" Text="Oblicz" />
