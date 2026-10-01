@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="OrderCostCalculatorMauiApp.MainPage"
+             x:Name="thisPage"
+             BindingContext="{x:Reference thisPage}">
+
+    <ScrollView>
+        <StackLayout Spacing="10">
+            <StackLayout Orientation="Horizontal">
+                <Label Text="Nazwa produktu" />
+                <Entry Text="{Binding ProductName}"
+               Placeholder="Nazwa produktu"/>
+            </StackLayout>
+
+            <StackLayout Orientation="Horizontal">
+                <Label Text="Cena za sztuke" />
+                <Entry Text="{Binding ProductPrice}"
+               Placeholder="Cena za sztuke"
+                   Keyboard="Numeric"/>
+            </StackLayout>
+
+            <StackLayout Orientation="Horizontal">
+                <Label Text="Liczba sztuk" 
+           VerticalOptions="Center"/>
+                <Stepper 
+                Increment="1"
+                Minimum="1"
+                Maximum="10"
+                Value="{Binding Quantity}"/>
+
+                <Label Text="{Binding Quantity}"
+           VerticalOptions="Center"/>
+            </StackLayout>
+
+            <StackLayout Orientation="Horizontal">
+
+                <Label Text="Sposób dostawy:"/>
+                <Picker
+                    ItemsSource="{Binding Delivery}"
+                    SelectedItem="{Binding SelectedDelivery}"
+                    />
+            </StackLayout>
+
+            <StackLayout Orientation="Horizontal">
+                <Label Text="Dostawa ekspresowa:"/>
+                <Switch IsToggled="{Binding ExpressDelivery}"/>
+                <Label Text="{Binding ExpressDelivery}"/>
+            </StackLayout>
+
+            <Button Command="{Binding CalculateOrder}"
+                    Text="Oblicz "/>
+
+            <Label Text="Podsumowanie:"/>
+            <Label Text="{Binding Summary}"/>
+            
+        </StackLayout>
+    </ScrollView>
+
+</ContentPage>
