@@ -97,8 +97,6 @@
                 "Kurier",
                 "Paczkomat"
             };
-            SelectedDelivery = Delivery[0];
-
             InitializeComponent();
         }
 
@@ -106,17 +104,17 @@
         {
             double DeliveryPrice = 0;
 
-            switch (Delivery)
+            switch (SelectedDelivery)
             {
                 case "Odbiór osobisty":
                     DeliveryPrice = 0; break;
                 case "Kurier":
-                    DeliveryPrice = 300; break;
+                    DeliveryPrice = 12; break;
                 case "Paczkomat":
-                    DeliveryPrice = 500; break;
+                    DeliveryPrice = 10; break;
             }
 
-            double totalCost = ProductPrice * Quantity;
+            double totalCost = ProductPrice * Quantity + DeliveryPrice;
 
             if(ExpressDelivery)
             {
@@ -128,6 +126,8 @@
         $"Cena za sztukę: {ProductPrice}zł \n" +
         $"Liczba sztuk: {Quantity} \n" +
         $"Dostawa ekspresowa: {(ExpressDelivery ? "TAK" : "NIE")} \n" +
+        $"Sposób dostawy: {SelectedDelivery} \n" +  
+        $"Koszt dostawy: {DeliveryPrice} \n" +
         $"Wynik: {totalCost}zł \n";
         }
     }
