@@ -6,7 +6,7 @@
              BindingContext="{x:Reference thisPage}">
 
     <ScrollView>
-        <StackLayout Spacing="10" Padding="20">
+        <StackLayout Spacing="12">
             <Label Text="Kalkulator kosztu zamowień" 
                    FontSize="22" 
                    HorizontalOptions="Center"/>
@@ -47,9 +47,9 @@
             </StackLayout>
 
             <StackLayout Orientation="Horizontal" Spacing="12">
-                <Label Text="Dostawa ekspresowa:"/>
+                <Label Text="Dostawa ekspresowa:" VerticalOptions="Center"/>
                 <Switch IsToggled="{Binding ExpressDelivery}"/>
-                <Label Text="{Binding ExpressDelivery}"/>
+                <Label Text="{Binding ExpressDelivery}" VerticalOptions="Center"/>
             </StackLayout>
 
             <Button Command="{Binding CalculateOrder}"

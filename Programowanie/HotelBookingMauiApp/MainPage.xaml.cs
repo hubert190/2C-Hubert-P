@@ -200,11 +200,6 @@ namespace HotelBookingMauiApp
                 return;
             }
 
-            if (ArrivalDate < DateTime.Today)
-            {
-                Summary = "Błąd data przyjazdu nie może być wcześniejsza niż dzisiaj";
-                return;
-            }
 
 
             double roomPrice = 0;
@@ -218,7 +213,7 @@ namespace HotelBookingMauiApp
                     roomPrice = 500; break;
             }
 
-            double roomCost = Nights * Persons;
+            double roomCost = Nights * roomPrice;
             double breakfastCost = 0;
 
             if (Breakfast) { 

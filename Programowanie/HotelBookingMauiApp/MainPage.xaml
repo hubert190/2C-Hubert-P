@@ -6,27 +6,27 @@
              BindingContext="{x:Reference thisPage}">
 
     <ScrollView>
-        <StackLayout Spacing="10">
-            <StackLayout Orientation="Horizontal">
-                <Label Text="Imię i nazwisko" />
+        <StackLayout Spacing="12">
+            <StackLayout Orientation="Horizontal" Spacing="12">
+                <Label Text="Imię i nazwisko" VerticalOptions="Center"/>
                 <Entry Text="{Binding FullName}"
                        Placeholder="wpisz imie i nazwisko"/>
             </StackLayout>
 
-            <StackLayout Orientation="Horizontal">
-                <Label Text="Adres e-mail" />
+            <StackLayout Orientation="Horizontal" Spacing="12">
+                <Label Text="Adres e-mail" VerticalOptions="Center"/>
                 <Entry Text="{Binding Email}"
                        Keyboard="Email"
                        Placeholder="wpisz adres e-mail"/>
             </StackLayout>
 
-            <StackLayout Orientation="Horizontal">
-                <Label Text="Data przyjazdu" />
+            <StackLayout Orientation="Horizontal" Spacing="12">
+                <Label Text="Data przyjazdu" VerticalOptions="Center"/>
                 <DatePicker Date="{Binding ArrivalDate}"
                             MinimumDate="{Binding MinimumDate}"/>
             </StackLayout>
 
-            <StackLayout Orientation="Horizontal">
+            <StackLayout Orientation="Horizontal" Spacing="12">
                 <Label Text="Liczba nocy" 
                        VerticalOptions="Center"/>
                 <Stepper 
@@ -39,8 +39,8 @@
                        VerticalOptions="Center"/>
             </StackLayout>
 
-            <StackLayout Orientation="Horizontal">
-                <Label Text="Liczba osób" />
+            <StackLayout Orientation="Horizontal" Spacing="12">
+                <Label Text="Liczba osób" VerticalOptions="Center"/>
                 <Stepper 
                     Increment="1"
                     Minimum="1"
@@ -52,29 +52,29 @@
 
             </StackLayout>
 
-            <StackLayout Orientation="Horizontal">
+            <StackLayout Orientation="Horizontal" Spacing="12">
 
-                <Label Text="Rodzaj pokoju:"/>
+                <Label Text="Rodzaj pokoju:" VerticalOptions="Center"/>
                 <Picker
                     ItemsSource="{Binding RoomCollection}"
                     SelectedItem="{Binding SelectedRoom}"
                     />
             </StackLayout>
 
-            <StackLayout Orientation="Horizontal">
-                <Label Text="Śnadanie:"/>
+            <StackLayout Orientation="Horizontal" Spacing="12">
+                <Label Text="Śnadanie:" VerticalOptions="Center"/>
                 <Switch IsToggled="{Binding Breakfast}"/>
-                <Label Text="{Binding Breakfast}"/>
+                <Label Text="{Binding Breakfast}"  VerticalOptions="Center"/>
             </StackLayout>
 
-            <StackLayout Orientation="Horizontal" >
-                <Label Text="Miejsce parkingowe:"/>
+            <StackLayout Orientation="Horizontal" Spacing="12">
+                <Label Text="Miejsce parkingowe:" VerticalOptions="Center"/>
                 <CheckBox IsChecked="{Binding Parking}"/>
-                <Label Text="{Binding Parking}"/>
+                <Label Text="{Binding Parking}"  VerticalOptions="Center"/>
             </StackLayout>
 
-            <StackLayout Orientation="Horizontal">
-                <Label Text="Rabat"/>
+            <StackLayout Orientation="Horizontal" Spacing="12">
+                <Label Text="Rabat" VerticalOptions="Center"/>
                 <Slider
                     Minimum="0"
                     Maximum="20"
@@ -86,7 +86,7 @@
                 <Label Text="%"
                        VerticalOptions="Center"/>
             </StackLayout>
-            
+
             <Button Command="{Binding CalculateReservation}"
                     Text="Oblicz koszt"
                     />
@@ -95,6 +95,4 @@
             <Label Text="{Binding Summary}"/>
         </StackLayout>
     </ScrollView>
-
-
 </ContentPage>

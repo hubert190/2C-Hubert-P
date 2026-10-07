@@ -127,7 +127,7 @@
         $"Liczba sztuk: {Quantity} \n" +
         $"Dostawa ekspresowa: {(ExpressDelivery ? "TAK" : "NIE")} \n" +
         $"Sposób dostawy: {SelectedDelivery} \n" +  
-        $"Koszt dostawy: {DeliveryPrice} \n" +
+        $"Koszt dostawy: {DeliveryPrice}zł \n" +
         $"Wynik: {totalCost}zł \n";
         }
     }
