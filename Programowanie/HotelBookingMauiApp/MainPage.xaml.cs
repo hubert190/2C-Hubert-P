@@ -144,7 +144,7 @@ namespace HotelBookingMauiApp
             {
                 if (calculateReservation == null)
                 {
-                    calculateReservation = new Command(() => { CalculateCost(); } );
+                    calculateReservation = new Command(() => { CalculateCost(); });
                 }
                 return calculateReservation;
             }
@@ -152,8 +152,8 @@ namespace HotelBookingMauiApp
 
         public MainPage()
         {
-            MinimumDate= DateTime.Today;
-            ArrivalDate= DateTime.Today;
+            MinimumDate = DateTime.Today;
+            ArrivalDate = DateTime.Today;
             Nights = 1;
             Persons = 1;
             Breakfast = false;
@@ -189,7 +189,8 @@ namespace HotelBookingMauiApp
                 return;
             }
 
-            if (!Email.Contains(".") || !Email.Contains("@")) {
+            if (!Email.Contains(".") || !Email.Contains("@"))
+            {
                 Summary = "Podałeś niepoprawny adres Email";
                 return;
             }
@@ -204,7 +205,8 @@ namespace HotelBookingMauiApp
 
             double roomPrice = 0;
 
-            switch (SelectedRoom) {
+            switch (SelectedRoom)
+            {
                 case "Pokój jednoosobowy":
                     roomPrice = 200; break;
                 case "Pokój dwuosobowy":
@@ -216,12 +218,13 @@ namespace HotelBookingMauiApp
             double roomCost = Nights * roomPrice;
             double breakfastCost = 0;
 
-            if (Breakfast) { 
-            breakfastCost = Nights * Persons * 40;
+            if (Breakfast)
+            {
+                breakfastCost = Nights * Persons * 40;
             }
 
             double parkingCost = 0;
-                if(Parking)
+            if (Parking)
             {
                 parkingCost = Nights * 30;
             }
@@ -238,17 +241,17 @@ namespace HotelBookingMauiApp
                 $"Pokój: {SelectedRoom} \n" +
                 $"Śniadanie: {(Breakfast ? "TAK" : "NIE")} \n" +
                 $"Parking: {(Parking ? "TAK" : "NIE")} \n" +
-                $"Rabat: {Discount}% \n"+
+                $"Rabat: {Discount}% \n" +
                 $"Koszt pokoju: {Nights} x {roomPrice}zł = {roomCost}zł \n" +
                 $"Śniadanie: {Nights} x {Persons} x 40zł = {breakfastCost}zł\n" +
                 $"Parking: {Nights} x 30zł = {parkingCost}zł\n" +
-                $"Cena przed rabatem: {totalBeforeDiscount}zł \n"+
+                $"Cena przed rabatem: {totalBeforeDiscount}zł \n" +
                 $"Rabat: {discountAmount:F2}zł \n" +
                 $"Łączny koszt: {totalCost:F2}zł\n";
         }
 
     }
 }
-        
-    
+
+
 

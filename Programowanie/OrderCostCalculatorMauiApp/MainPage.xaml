@@ -6,12 +6,12 @@
              BindingContext="{x:Reference thisPage}">
 
     <ScrollView>
-        <StackLayout Spacing="12">
+        <StackLayout Spacing="12" Background="White">
             <Label Text="Kalkulator kosztu zamowień" 
                    FontSize="22" 
                    HorizontalOptions="Center"/>
             
-            <StackLayout Orientation="Horizontal" Spacing="12">
+            <StackLayout Orientation="Horizontal" Spacing="12" >
                 <Label Text="Nazwa produktu" VerticalOptions="Center"/>
                 <Entry Text="{Binding ProductName}"
                Placeholder="Nazwa produktu"/>

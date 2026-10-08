@@ -6,8 +6,8 @@
              BindingContext="{x:Reference thisPage}">
 
     <ScrollView>
-        <StackLayout Spacing="12">
-            <StackLayout Orientation="Horizontal" Spacing="12">
+        <StackLayout Spacing="12" >
+            <StackLayout Orientation="Horizontal" Spacing="12" >
                 <Label Text="Imię i nazwisko" VerticalOptions="Center"/>
                 <Entry Text="{Binding FullName}"
                        Placeholder="wpisz imie i nazwisko"/>
