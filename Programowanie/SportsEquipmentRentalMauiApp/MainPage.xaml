@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SportsEquipmentRentalMauiApp.MainPage"
+             x:Name="thisPage"
+             BindingContext="{x:Reference thisPage}">
+
+    <ScrollView>
+        <StackLayout Background="White" Padding="25" Spacing="12">
+            <Label Text="Wypożyczalnia sprzętu sporotowego" HorizontalOptions="Center" FontSize="22" />
+            <Label Text="Wybierz sprzęt" />
+            <CollectionView 
+             ItemsSource="{Binding SprzetCollection}"
+             SelectedItem="{Binding SelectedSprzet}"
+             SelectionMode="Single">
+
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <StackLayout Padding="10" Spacing="5">
+                            <Label Text="{Binding Name}" FontSize="18" />
+                            <Label Text="{Binding PricePerDay, StringFormat='Cena za dzien: {0} zł'}" />
+                        </StackLayout>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+
+            <Label Text="Imie i nazwisko" />
+            <Entry Text="{Binding ClientName}" Placeholder="Imię i nazwisko" />
+
+            <Label Text="Liczba dni wypożyczenia: "/>
+            <StackLayout Orientation="Horizontal" Spacing="15">
+                <Stepper 
+                    Minimum="1"
+                    Maximum="7"
+                    Increment="1"
+                    Value="{Binding Days}" />
+                <Label Text="{Binding Days}" VerticalOptions="Center"/>
+            </StackLayout>
+
+            <Label Text="Ubezpieczenie:"/>
+            <CheckBox IsChecked="{Binding Insurance}" />
+            
+            <Button 
+            
+        </StackLayout>
+    </ScrollView>
+
+</ContentPage>

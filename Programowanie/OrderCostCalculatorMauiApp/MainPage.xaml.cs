@@ -1,4 +1,6 @@
-﻿namespace OrderCostCalculatorMauiApp
+﻿using System.Collections.ObjectModel;
+
+namespace OrderCostCalculatorMauiApp
 {
     public partial class MainPage : ContentPage
     {
@@ -83,15 +85,15 @@
             }
         }
 
-        public string[]
-           Delivery
+        public ObservableCollection<string> Delivery
         { get; set; }
 
         public MainPage()
         {
             Quantity = 1;
             ExpressDelivery = false;
-            Delivery = new string[]
+            Delivery = new
+            ObservableCollection<string>
             {
                 "Odbiór osobisty",
                 "Kurier",
